@@ -1,7 +1,7 @@
 from django.db import models
 
-# Create your models here.
-class book(models.Model):
+
+class Book(models.Model):
     title = models.TextField()
     description = models.TextField()
     author = models.TextField()
@@ -12,5 +12,8 @@ class book(models.Model):
     vendor_id = models.IntegerField()
     publisher_id = models.IntegerField()
     count = models.IntegerField()
-
-
+    
+    def __str__(self):
+        return self.name
+    
+    

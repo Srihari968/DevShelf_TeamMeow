@@ -1,4 +1,5 @@
 # DevShelf_TeamMeow
 DevShelf_TeamMeow
-neel is dumb
+The website is not yet runnable
+We have to fix a few errors
 

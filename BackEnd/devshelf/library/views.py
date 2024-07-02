@@ -17,9 +17,13 @@ def HomePage(request):
     #template = loader.get_template('HomePage.html')
     return render(request,template_name='HomePage.html')
     #return HttpResponse(template.render())
+    
+    
 def testPage(request):
     #template = loader.get_template('HomePage.html')
     return render(request,template_name='first.html')
+
+
 def get_name(request):
     # if this is a POST request we need to process the form data
     global context
@@ -33,17 +37,13 @@ def get_name(request):
         search = request.POST['your_name']
         print('Entered ', search)
 
+        new = []
+        for book in books:
+            if search.lower() in book.title.lower() or search.lower() in book.author.lower() or search.lower() in book.genre.lower() or search.lower() in book.department.lower():
+                new.append(book.title)
 
-        context = {'search': search, 'books': books}
-
-
-        # check whether it's valid:
-        if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponseRedirect('/library/test/')
-
+        context = {'search': search, 'books': new}
+        
     # if a GET (or any other method) we'll create a blank form
     else:
         form = NameForm()

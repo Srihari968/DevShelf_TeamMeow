@@ -20,7 +20,6 @@ class RegisterView(generics.CreateAPIView):
 
 
 def login(request):
-    render(request,template_name='first.html')
     if(request.method == 'POST'):
         if request.POST['password'] == 'hello':
             context = {'username': request.POST['username']}

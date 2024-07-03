@@ -7,6 +7,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from .forms import NameForm
 from .models import Book
+from .helper import borrow_book
 
 
 # Create your views here.
@@ -15,7 +16,10 @@ from .models import Book
 
 def HomePage(request):
     #template = loader.get_template('HomePage.html')
-    return render(request,template_name='HomePage.html')
+    for x in request.POST:
+        print(x)
+    context
+    return render(request,template_name='library/HomePage.html')
     #return HttpResponse(template.render())
     
     
@@ -30,17 +34,19 @@ def get_name(request):
     books = Book.objects.all()
 
 
-    print(books)
+    #print(books)
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form = NameForm(request.POST)
         search = request.POST['your_name']
+        for x in request.POST:
+            print(x)
         print('Entered ', search)
 
         new = []
         for book in books:
             if search.lower() in book.title.lower() or search.lower() in book.author.lower() or search.lower() in book.genre.lower() or search.lower() in book.department.lower():
-                new.append(book.title)
+                new.append(book)
 
         context = {'search': search, 'books': new}
         
@@ -48,4 +54,14 @@ def get_name(request):
     else:
         form = NameForm()
 
-    return render(request, 'name.html', context)
+
+    return render(request, 'library/name.html', context)
+
+def borrow_page(request):
+    for x in request.POST:
+        print(x)
+        print(request.POST[x])
+    context = {'borrowed': request.POST['borrow']}
+    borrow_book(request.POST['borrow'])
+
+    return render(request,'library/borrowpage.html',context)

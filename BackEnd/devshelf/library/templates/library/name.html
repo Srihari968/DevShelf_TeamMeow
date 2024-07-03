@@ -1,0 +1,24 @@
+<table>
+    <tr>
+        <th> Title</th>
+        <th> Authur</th>
+        <th> Genre</th>
+        <th> Count</th>
+        <th> Borrow</th>
+    </tr>
+{% for book in books %}
+    <tr>
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.genre}}</td>
+        <td>{{book.count}}</td>
+        <td>
+            <form action="/library/borrow/" method="post">
+                {% csrf_token %}
+                <input type="submit" id="{{book.title}}" value="{{book.title}}" name = "borrow" content="borrow"/>
+            </form>
+        </td>
+    </tr>
+
+{% endfor %}
+</table>

@@ -3,6 +3,8 @@ from .serializers import RegisterSerializer
 from django.contrib.auth import get_user_model
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
+from django.shortcuts import render
+
 from django.http import HttpResponse
 from django.template import loader
 
@@ -17,8 +19,13 @@ class RegisterView(generics.CreateAPIView):
     permission_classes = [AllowAny,]
 
 
-def members(request):
-    template = loader.get_template('first.html')
-    return HttpResponse(template.render())
+def login(request):
+    render(request,template_name='first.html')
+    if(request.method == 'POST'):
+        if request.POST['password'] == 'hello':
+            context = {'username': request.POST['username']}
+            return render(request, 'library/HomePage.html', context)
+
+    return render(request, template_name='first.html')
 
 

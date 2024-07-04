@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'user',
     
     'rest_framework',
+    'rest_framework_simplejwt',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -81,10 +83,16 @@ WSGI_APPLICATION = 'devshelf.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'devshelf',
+        'USER': 'postgres',
+        'PASSWORD': 'Abc@123',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
+
+SITE_ID = 1
 
 
 # Password validation

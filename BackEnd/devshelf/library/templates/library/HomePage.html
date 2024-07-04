@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akshara</title>
-    <link rel="stylesheet"  href="style.css">
+    <link rel="stylesheet"  href="{% static 'style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+
     <header>
         <div class="top-bar">
             <div class="logo">
@@ -37,25 +38,46 @@
         </div>
     </header>
 
+    <h1>Hello {{username}}</h1>
+        {% if username == "admin" %}
+            <b>You r admin</b>
+        {% endif %}
+        {% if username != "admin" %}
+            <form action = "/library/my_borrows/" method = "post">
+                {% csrf_token %}
+                <input id = "username1" type = "text" name = "username" value = "{{username}}" hidden>
+                <input type="submit" value="View my borrowals">
+            </form>
+        {% endif %}
+
     <div class="hero-section">
         <div class="welcome">
             <div class="lib-pic">
 
             </div>
-            <div class="search-bar">
-                <input placeholder="Search" class="search-box">
-                <div class="search-icon">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-            </div>
-        </div>
-        <h1>Hello {{username}}</h1>
-        <form action="/library/test/" method="post">
+            <form action = "/library/test/" method = "post">
                 {% csrf_token %}
-                <label for="your_name">Search: </label>
-                <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+
+                <div class="search-bar">
+                    <input placeholder="Search" class="search-box" id = "your_name" name = "your_name" value = "{{current_name}}">
+                    <div class="search-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <input id = "username" type = "text" name = "username" value = "{{username}}" hidden>
                 <input type="submit" value="OK">
+                </div>
+
             </form>
+        </div>
+
+
+<!--        <form action="/library/test/" method="post">-->
+<!--                {% csrf_token %}-->
+<!--                <label for="your_name">Search: </label>-->
+<!--                <input id="your_name1" type="text" name="your_name" value="{{ current_name }}">-->
+<!--                <input id = "username2" type = "text" name = "username" value = "{{username}}" hidden>-->
+<!--                <input type="submit" value="OK">-->
+<!--            </form>-->
 
         <div class="book-section">
             <h1 class="bs-name">Featured Categories</h1>
@@ -63,28 +85,29 @@
                 <div class="box1">
                     <div class="box-content">
                         <h2>Fiction & Non-Fiction</h2>
-                        <div class="box-img" style="background-image: url('fiction.jpg');"></div>
+                        <img class = "box-img" src="{% static 'fiction.jpg' %}" >
                         <p>See more</p>
                     </div>
                 </div>
                 <div class="box1">
                     <div class="box-content">
                         <h2>Science & Technology</h2>
-                        <div class="box-img" style="background-image: url('science.jpg');"></div>
+                        <img class = "box-img" src="{% static 'science.jpg' %}" >
+
                         <p>See more</p>
                     </div>
                 </div>
                 <div class="box1">
                     <div class="box-content">
                         <h2>History</h2>
-                        <div class="box-img" style="background-image: url('history.jpg');"></div>
+                        <img class = "box-img" src="{% static 'history.jpg' %}" >
                         <p>See more</p>
                     </div>
                 </div>
                 <div class="box1">
                     <div class="box-content">
                         <h2>Others</h2>
-                        <div class="box-img" style="background-image: url('spanish.jpg');"></div>
+                        <img class = "box-img" src="{% static 'spanish.jpg' %}" >
                         <p>See more</p>
                     </div>
                 </div>
@@ -94,28 +117,28 @@
                 <div class="box2">
                     <div class="box-content">
                         <h2>Fortune's Shadow</h2>
-                        <div class="box-img" style="background-image: url('new1.jpeg');"></div>
+                        <img class = "box-img" src="{% static 'new1.jpeg' %}" >
                         <p>See more</p>
                     </div>
                 </div>
                 <div class="box2">
                     <div class="box-content">
                         <h2>Wisteria</h2>
-                        <div class="box-img" style="background-image: url('new2.jpg');"></div>
+                        <img class = "box-img" src="{% static 'new2.jpg' %}" >
                         <p>See more</p>
                     </div>
                 </div>
                 <div class="box2">
                     <div class="box-content">
                         <h2>The Witcher</h2>
-                        <div class="box-img" style="background-image: url('new3.jpg');"></div>
+                        <img class = "box-img" src="{% static 'new3.jpg' %}" >
                         <p>See more</p>
                     </div>
                 </div>
                 <div class="box2">
                     <div class="box-content">
                         <h2>Soul</h2>
-                        <div class="box-img" style="background-image: url('new4.jpg');"></div>
+                        <img class = "box-img" src="{% static 'new4.jpg' %}" >
                         <p>See more</p>
                     </div>
                 </div>
@@ -125,28 +148,28 @@
                 <div class="box3">
                     <div class="box-content">
                         <h2>Immortals of Meluha</h2>
-                        <div class="box-img" style="background-image: url('best1.jpg');"></div>
+                        <img class = "box-img" src="{% static 'best1.jpg' %}" >
                         <p>See more</p>
                     </div>
                 </div>
                 <div class="box3">
                     <div class="box-content">
                         <h2>Atomic Habits</h2>
-                        <div class="box-img" style="background-image: url('best2.jpg');"></div>
+                        <img class = "box-img" src="{% static 'best2.jpg' %}" >
                         <p>See more</p>
                     </div>
                 </div>
                 <div class="box3">
                     <div class="box-content">
                         <h2>Cengage Mathematics</h2>
-                        <div class="box-img" style="background-image: url('best3.jpeg');"></div>
+                        <img class = "box-img" src="{% static 'best3.jpeg' %}" >
                         <p>See more</p>
                     </div>
                 </div>
                 <div class="box3">
                     <div class="box-content">
                         <h2>Indian History</h2>
-                        <div class="box-img" style="background-image: url('best4.jpg');"></div>
+                        <img class = "box-img" src="{% static 'best4.jpg' %}" >
                         <p>See more</p>
                     </div>
                 </div>

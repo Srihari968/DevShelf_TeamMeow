@@ -1,3 +1,4 @@
+<h1>Hello {{username}}</h1>
 <table>
     <tr>
         <th> Title</th>
@@ -15,7 +16,9 @@
         <td>
             <form action="/library/borrow/" method="post">
                 {% csrf_token %}
+                <input type="text" id = "username" value = "{{username}}" name = "username" hidden>
                 <input type="submit" id="{{book.title}}" value="{{book.title}}" name = "borrow" content="borrow"/>
+
             </form>
         </td>
     </tr>

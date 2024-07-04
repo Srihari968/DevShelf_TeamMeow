@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from library.models import Book
 
 
+
 class User(AbstractUser):
     # AbstractUser contains username, email, is_staff
     name = models.CharField(max_length=50)

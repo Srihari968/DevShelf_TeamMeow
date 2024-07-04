@@ -7,7 +7,7 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 from django.template import loader
-
+from .models import User
 
 
 User = get_user_model()
@@ -20,10 +20,12 @@ class RegisterView(generics.CreateAPIView):
 
 
 def login(request):
+    users = User.objects.all()
     if(request.method == 'POST'):
-        if request.POST['password'] == 'hello':
-            context = {'username': request.POST['username']}
-            return render(request, 'library/HomePage.html', context)
+        for x in users:
+            if x.name == request.POST['username'] and request.POST['password'] == 'hello':
+                context = {'username': x.name}
+                return render(request, 'library/HomePage.html', context)
 
     return render(request, template_name='first.html')
 

@@ -2,7 +2,7 @@ from library.models import Book
 import csv
 
 def run():
-    with open('/Users/neel/Documents/DevShelf_TeamMeow/datasetnew2.csv') as file:
+    with open('C:\\Users\\Divya\\DevShelf_TeamMeow\\datasetnew2.csv') as file:
         reader = csv.reader(file)
         next(reader)
         #Book.objects().all().delete()

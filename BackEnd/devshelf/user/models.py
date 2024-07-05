@@ -25,4 +25,4 @@ class Borrowed(models.Model):
     is_lent = models.BooleanField(default=False)
     
     def __str__(self):
-        return str(user.name) + str(book.title)
+        return str(self.user.name) + str(self.book.title)

@@ -27,6 +27,6 @@ def login(request):
                 context = {'username': x.name}
                 return render(request, 'library/HomePage.html', context)
 
-    return render(request, template_name='first.html')
+    return render(request, template_name='login.html')
 
 

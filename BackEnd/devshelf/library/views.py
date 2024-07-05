@@ -26,7 +26,7 @@ def HomePage(request):
     
 def testPage(request):
     #template = loader.get_template('HomePage.html')
-    return render(request,template_name='first.html')
+    return render(request,template_name='login.html')
 
 
 def get_name(request):

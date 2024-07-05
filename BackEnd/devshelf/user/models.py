@@ -22,6 +22,7 @@ class Borrowed(models.Model):
     borrow_time = models.DateTimeField(auto_now_add=True)
     return_time = models.DateTimeField()
     borrowed = models.BooleanField(default=False)
+    is_lent = models.BooleanField(default=False)
     
     def __str__(self):
         return str(user.name) + str(book.title)

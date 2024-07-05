@@ -76,3 +76,9 @@ def my_borrows(request):
     context = {'my_borrowals': my_borrowals, 'username': request.POST['username']}
     return render(request, 'library/my_borrows.html', context)
 
+def lend_books(request):
+    all_borrowals = Borrowed.objects.all()
+    context = {'username': request.POST['username'], 'borrowals': all_borrowals}
+    return render(request,'library/lend_borrows.html', context)
+
+

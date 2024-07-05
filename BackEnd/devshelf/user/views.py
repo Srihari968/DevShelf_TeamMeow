@@ -23,7 +23,7 @@ def login(request):
     users = User.objects.all()
     if(request.method == 'POST'):
         for x in users:
-            if x.name == request.POST['username'] and request.POST['password'] == 'hello':
+            if x.username == request.POST['username'] and request.POST['password'] == 'hello':
                 context = {'username': x.name}
                 return render(request, 'library/HomePage.html', context)
 

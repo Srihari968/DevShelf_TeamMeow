@@ -35,6 +35,12 @@
                     </button>
                 </form>
 
+                <div class="message">
+                    {%for message in messages%}
+                        <h3>{{message}}</h3>
+                    {%endfor%}
+                </div>
+
                 <div class="SignUp">
                     <button class="SignUpBtn">
                        <a>Sign Up</a>

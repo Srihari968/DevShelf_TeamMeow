@@ -12,5 +12,8 @@ img.addEventListener("click", () => {
     img.removeEventListener("mouseover", mouseHandler);
     img.classList.remove("appear");
     img.style.opacity = 1;
-});
+
+}
+
+);
 

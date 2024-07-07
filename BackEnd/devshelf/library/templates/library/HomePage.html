@@ -7,20 +7,23 @@
     <title>Akshara</title>
     <link rel="stylesheet"  href="{% static 'Homepage.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Sacramento&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
+    <header id="header">
         <div class="top-bar">
-            <div class="logo">
-
-            </div>
+            <a href="http://127.0.0.1:8000/user/login/#header" class="logo-link">
+                <img src="{% static 'cropped_image.png' %}" alt="logo-pic" class="logo">
+            </a>
             <div class="icon-tag">
                 <i class="fa-solid fa-house"></i>
                 <a>Home</a>
             </div>
             <div class="icon-tag">
-                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-users"></i>
                 <a>About Us</a>
             </div>
             <div class="icon-tag">
@@ -34,6 +37,10 @@
             <div class="icon-tag">
                 <i class="fa-solid fa-clipboard-question"></i>
                 <a>FAQ</a>
+            </div>
+            <div class="icon-tag account">
+                <i class="fa-solid fa-user"></i>
+                <a>Your Account</a>
             </div>
         </div>
     </header>
@@ -61,7 +68,23 @@
     <div class="hero-section">
         <div class="welcome">
             <div class="lib-pic">
-
+                <div class="lib-content slide-in-left" id="lib-logo">
+                    <div class="lib-ct-top">
+                        <img src="{% static 'edu.jpg' %}"  class="edu"></img>
+                        <div>
+                            <h3>Step into ,</h3>
+                            <h1>Akshara</h1>
+                        </div>
+                        <img src="{% static 'edu.jpg' %}" class="edu"></img>
+                    </div>
+                   <p>Welcome to Akshara, where every book tells a story waiting to be discovered. Dive into a world of literary wonders, from timeless classics to contemporary tales, curated to ignite your imagination. Explore our virtual shelves, where knowledge meets passion, and embark on a journey through pages that inspire and enrich. At Akshara, we believe in the power of words to transform minds and hearts, inviting you to explore, learn, and embrace the magic of reading.</p>
+    
+                </div>
+                <div class="line slide-in-right"></div>
+                <div class="lib-aks slide-in-right">
+                    <img src="{% static 'akshara-high-resolution-logo.png' %}"  class="lib-aks-img"></img>
+                </div>
+                
             </div>
             <form action = "/library/test/" method = "post">
                 {% csrf_token %}
@@ -186,5 +209,38 @@
             </div>
         </div>    
     </div>  
+
+    <footer>
+        <div class="foot-panel1">
+            <a href="#header">Back to Top</a>
+        </div>
+        <div class="foot-panel2">
+            <ul>
+            <p>Address: 123 Library St, Booktown, Dharwad-27</p>
+            <p>Phone: (+91) 1234567890</p>
+            <p>Email: contact@aksharalibrary.com</p>
+            </ul>
+            <ul class="shift">
+                <a href="/about">About Us</a>
+                <a href="/home">Home</a>
+                <a href="/books">Books</a>
+                <a href="/faq">FAQ</a>
+                <a href="/contact">Contact Us</a>
+            </ul>
+            <ul>
+                <p>Login</p>
+                <p>Sign Up</p>
+            </ul>
+        </div>
+        <div class="foot-panel4">
+            <div class="foot-second">
+                <a>© 2024, Akshara.com, Inc. or its affiliates.</a>
+                <br>
+                <a>All rights reserved.</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'HomePage_Script.js' %}" ></script>
 </body>
 </html>

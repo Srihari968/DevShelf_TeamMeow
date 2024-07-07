@@ -1,23 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="LoginPageStyle.css">
+</head>
+
 <body>
 
-<h1>Hello World!</h1>
-<p>Welcome to my first Django project!</p>
-<form action="/user/login/" method="post">
-    {% csrf_token %}
-    <input type = "text" placeholder="Username" name = "username">
-    <br>
-    <input type = "password" placeholder="Password" name = "password">
-    <br>
-    <input type = "submit" value = "LOGIN">
-</form>
+<div class="container">
+    
+        <div class="page">       
+            <div class="title">
+                <h3>Akshara</h3>
+            </div>
+            <div class="pagecontent">
+               
+                <form class="login" action="/user/login/" method="post">
+                    {% csrf_token %}
+                    <div class="LoginField">
+                        <i class="LoginIcon_User"></i>
+                        <input type="text" class="LoginInfo" placeholder="Username" name = "username">
+                    </div>
+                    <div class="LoginField">
+                        <i class="LoginIcon_Lock"></i>
+                        <input type="password" class="LoginInfo" placeholder="Password" name = "password">
+                    </div>
+                    <button class="button LoginSubmit">
+                        <span class="ButtonText">LogIn</span>
+                        <i class="ButtonIcon_Symbol"></i>
+                    </button>
+                </form>
 
-<div>
-    {%for message in messages%}
-        <h3>{{message}}</h3>
-    {%endfor%}
+                <div class="SignUp">
+                    <button class="SignUpBtn">
+                       <a>Sign Up</a>
+                    </button>
+                </div>
+            </div>
+           
+            <div class="pagebackground">
+                <span class="pagebackgroundShape pagebackground_shape4"></span>
+                <span class="pagebackgroundShape pagebackground_shape3"></span>
+                <span class="pagebackgroundShape pagebackground_shape2"></span>
+                <span class="pagebackgroundShape pagebackground_shape1"></span>
+            </div>
+        </div>
 </div>
 
 </body>
+
 </html>

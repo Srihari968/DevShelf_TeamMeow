@@ -11,23 +11,23 @@
 
 <body>
 
-<div class="container">
-    
-        <div class="page">       
+    <div class="container">
+
+        <div class="page">
             <div class="title">
                 <h3 class="Title">Akshara</h3>
             </div>
             <div class="pagecontent">
-               
+
                 <form class="login" action="/user/login/" method="post">
                     {% csrf_token %}
                     <div class="LoginField">
                         <i class="LoginIcon_User"></i>
-                        <input type="text" class="LoginInfo" placeholder="Username" name = "username">
+                        <input type="text" class="LoginInfo" placeholder="Username" name="username">
                     </div>
                     <div class="LoginField">
                         <i class="LoginIcon_Lock"></i>
-                        <input type="password" class="LoginInfo" placeholder="Password" name = "password">
+                        <input type="password" class="LoginInfo" placeholder="Password" name="password">
                     </div>
                     <button class="button LoginSubmit">
                         <span class="ButtonText">LogIn</span>
@@ -37,19 +37,19 @@
 
                 <div class="message">
                     {%for message in messages%}
-                        <h3>{{message}}</h3>
+                    <h3>{{message}}</h3>
                     {%endfor%}
                 </div>
 
                 <div class="SignUp">
                     <p class="condition">Don't have an account?</p>
                     <button class="SignUpBtn">
-                    
-                       <a>Sign Up</a>
+
+                        <a>Sign Up</a>
                     </button>
                 </div>
             </div>
-           
+
             <div class="pagebackground">
                 <span class="pagebackgroundShape pagebackground_shape4"></span>
                 <span class="pagebackgroundShape pagebackground_shape3"></span>
@@ -57,8 +57,9 @@
                 <span class="pagebackgroundShape pagebackground_shape1"></span>
             </div>
         </div>
-</div>
+    </div>
 
+    <!-- <script src="{% static 'LoginPage,Script.js' %}" ></script> -->
 </body>
 
 </html>

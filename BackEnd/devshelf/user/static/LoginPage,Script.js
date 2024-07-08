@@ -1,9 +1,34 @@
 console.log("Welcome to the Login Page");
 
-let msg = document.getElementsByClassName(".message");
 
-const refresh_page = () => {
-    msg.style.display = "hide";
-}
 
-document.addEventListener("DOMContentLoaded", refresh_page);
+document.addEventListener("keypress", function(event) {
+    const messageElement = document.querySelector(".message");
+    if(event.keyCode=116)
+    messageElement.style.display = "none";
+  });
+
+  
+document.addEventListener("keydown", function(event) {
+    const messageElement = document.querySelector(".message");
+    if(event.keyCode=116)
+    messageElement.style.display = "none";
+  });
+
+  
+document.addEventListener("keyup", function(event) {
+    const messageElement = document.querySelector(".message");
+    if(event.keyCode=116)
+    messageElement.style.display = "none";
+  });
+
+
+
+
+
+
+
+
+
+
+

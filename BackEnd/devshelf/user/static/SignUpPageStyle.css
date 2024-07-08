@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Bona Nova SC", serif;
+}
+
+body {
+    background: linear-gradient(90deg, #89a7e9, #2c33ce);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* margin:30px; */
+    /* margin-top: 80px; */
+    padding: 30px;
+    
+}
+
+.page {
+    background: linear-gradient(90deg, #89a7e9, #2c33ce);
+    position: relative;
+    height: 910px;
+    width: 720px;
+    box-shadow: 0px 0px 24px #5C5696;
+}
+.pagecontent {
+    z-index: 1;
+    position: relative;
+    height: 100%;
+
+}
+
+.title {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    top: 90px;
+    left: 220px;
+    font-size: 50px;
+    text-shadow: 3px 2px rgb(77, 162, 205);
+
+
+    color: rgb(8, 71, 159);
+    z-index: 2;
+}
+
+.pagebackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+}
+
+.pagebackgroundShape {
+    transform: rotate(50deg);
+    position:absolute;
+}
+
+.pagebackground_shape1 {
+    height: 870px;
+    width: 870px;
+    background: #f4f6f7;
+    top: -70px;
+    right: 155px;
+    opacity: 0.89;
+    border-radius: 0 78px 0 0;
+}
+
+.pagebackground_shape2 {
+    height: 560px;
+    width: 5600px;
+    background: #5785beca;
+    top: -172px;
+    right: 0;
+    border-radius: 32px;
+}
+
+.pagebackground_shape3 {
+    height: 900px;
+    width: 500px;
+    background: linear-gradient(270deg, #7da1ef70, #0d50e2);
+    top: -24px;
+    right: -9px;
+    border-radius: 32px;
+}
+
+.pagebackground_shape4 {
+    height: 600px;
+    width: 400px;
+    background: #6289d6;
+    top: 420px;
+    right: 50px;
+    border-radius: 60px;
+}
+
+.SU{
+    width: 320px;
+    padding: 30px;
+    padding-top: 156px;
+  
+}
+
+.SUInfo:hover {
+
+    transform: scale(1.178);
+}
+
+.SUField {
+    padding: 20px 0px;
+    position: relative;
+    /* //right: px; */
+    top: 7px;
+    left: 20px;
+}
+
+
+.SUField2 {
+    padding: 20px 0px;
+    position: relative;
+    right: -357px;
+    top: -290px;
+
+
+} 
+
+.SUField3 {
+    padding: 20px 0px;
+    position: relative;
+    /* right: -200px; */
+    top: -240px;
+    left: 20px;
+    
+
+
+} 
+
+
+.SUIcon {
+    position: absolute;
+    top: 30px;
+    color: #7875B5;
+}
+
+
+.SUInfo {
+    border: none;
+    border-bottom: 2px solid #acacad;
+    background: none;
+    padding: 10px;
+    padding-left: 24px;
+    font-weight: 700;
+    width: 75%;
+    transition: .2s;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.SUInfo:active,
+.SUInfo:focus,
+.SUInfo:hover {
+    outline: none;
+    border-bottom-color: #6A679E;
+}
+
+
+
+.SUSubmit {
+    background: #fff;
+    font-size: 14px;
+    /* margin-top: 30px; */
+    padding: 16px;
+    padding-left: 24px;
+    border-radius: 26px;
+    border: 1px solid #D4D3E8;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    width: 45%;
+    color: #4C489D;
+    box-shadow: 0px 4px 4px #334eba;
+    cursor: pointer;
+    transition: .2s;
+    position: relative;
+    
+}
+
+
+.SUSubmit:active,
+.SUSubmit:focus,
+.SUSubmit:hover {
+    border-color: #6A679E;
+    outline: none;
+
+}
+
+Button:hover {
+    transform: scale(1.2378);
+}
+
+.button{
+    top: -220px;
+    right: -30px;
+}
+
+
+.ButtonIcon {
+    font-size: 24px;
+    margin-left: auto;
+    color: #7875B5;
+}
+
+.LogInBtn {
+    position: relative;
+    /* left: 230px; */
+    top: -215px;
+    right: -450px;
+    border: 2px solid white;
+    border-radius: 7px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    /* padding: 5px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 15%;
+    padding-top: 6px;
+    padding-bottom: 7px;
+
+    color: #4C489D;
+    box-shadow: 2px 3px 3px #111e20;
+    cursor: pointer;
+    transition: .2s;
+
+}
+
+.LogIpBtn:hover {
+    transform: scale(1.28);
+}
+
+
+
+.condition {
+    position: relative;
+    display: flex;
+    /* left: 200px; */
+    top: -220px;
+    right: -400px;
+    font-size: 1.1rem;
+    padding-bottom: 5px;
+    font-weight: 700;
+
+}

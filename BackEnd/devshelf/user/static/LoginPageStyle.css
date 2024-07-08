@@ -33,7 +33,7 @@
 
  }
 
- h3 {
+ .Title {
  	position: relative;
  	align-items: center;
  	justify-content: center;
@@ -137,6 +137,7 @@
  	font-weight: 700;
  	width: 75%;
  	transition: .2s;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
  }
 
  .LoginInfo:active,
@@ -182,14 +183,14 @@
  	color: #7875B5;
  }
 
- .SignUpBtn {
+ .SignUpBtn{
  	position: relative;
  	left: 230px;
  	top: 60px;
  	border: 2px solid white;
  	border-radius: 7px;
  	box-sizing: border-box;
- 	margin-top: 10px;
+ 	margin-top: 5px;
  	padding: 5px;
  	display: flex;
  	align-items: center;
@@ -206,4 +207,28 @@
 
  .SignUpBtn:hover {
  	transform: scale(1.28);
+ }
+
+ .message{
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	display:flex;
+	color: red;
+	font-weight: bold;
+	padding-left: 20px;
+	padding-right: 20px;
+	position: relative;
+    padding-top: 0px;
+	margin-top: 0px;
+	height:4px;
+ }
+
+ .condition{
+	position: relative;
+	display: flex;
+ 	left: 200px;
+ 	top: 60px;
+	font-size: 0.75rem;
+    padding-bottom: 5px;
+    font-weight: 400;
+    
  }

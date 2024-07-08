@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'SignUpPageStyle.css' %}" >
+</head>
+
+<body>
+
+<div class="container">
+    
+        <div class="page">       
+            <div class="title">
+                <h3>Akshara</h3>
+            </div>
+            <div class="pagecontent">
+               
+                <form class="SU">
+                    <div class="SUField">
+            
+                        <p class="Display">Enter your Username:</p>
+                        <input type="text" class="SUInfo" placeholder="Username">
+                    </div>
+                    <div class="SUField">
+            
+                        <p class="Display">Enter your Name:</p>
+                        <input type="text" class="SUInfo" placeholder="Name">
+                    </div>
+                    <div class="SUField">
+            
+                        <p class="Display">Enter your Email:</p>
+                        <input type="text" class="SUInfo" placeholder="Email">
+                    </div>
+                    <div class="SUField2">
+            
+                        <p class="Display">Enter your Phone Number:</p>
+                        <input type="text" class="SUInfo" placeholder="Phone Number">
+                    </div>
+                    <div class="SUField2">
+            
+                        <p class="Display">Enter your Password:</p>
+                        <input type="password" class="SUInfo" placeholder="Password">
+                    </div>
+                    <div class="SUField2">
+            
+                        <p class="Display">Confirm the Password</p>
+                        <input type="password" class="SUInfo" placeholder="Confirm Password">
+                    </div>
+                   
+                    <div class="SUField3">
+            
+                        <span class="Display">Admin:</span>
+                        <input type="checkbox" class="SUInfo" placeholder="Admin">
+                    </div>
+                   
+
+                    <button class="button SUSubmit">
+                        <span class="ButtonText">SignUp</span>
+                        <i class="ButtonIcon_Symbol"></i>
+                    </button>
+                </form>
+
+                <div class="LogIn">
+                   <p class="condition">Already have an Account?</p>
+                    <button class="LogInBtn">
+                       <a >Login</a>
+                    </button>
+                </div>
+            </div>
+           
+            <div class="pagebackground">
+                <span class="pagebackgroundShape pagebackground_shape4"></span>
+                <span class="pagebackgroundShape pagebackground_shape3"></span>
+                <span class="pagebackgroundShape pagebackground_shape2"></span>
+                <span class="pagebackgroundShape pagebackground_shape1"></span>
+            </div>
+        </div>
+</div>
+
+</body>
+
+</html>

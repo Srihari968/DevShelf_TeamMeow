@@ -29,25 +29,30 @@
                         <i class="LoginIcon_Lock"></i>
                         <input type="password" class="LoginInfo" placeholder="Password" name="password">
                     </div>
+                    <div class="message">
+                    {%for message in messages%}
+                    <h3 class="msg1">{{message}}</h3>
+                    {%endfor%}
+                </div>
                     <button class="button LoginSubmit">
                         <span class="ButtonText">LogIn</span>
                         <i class="ButtonIcon_Symbol"></i>
                     </button>
                 </form>
 
-                <div class="message">
-                    {%for message in messages%}
-                    <h3 class="msg1">{{message}}</h3>
-                    {%endfor%}
-                </div>
 
-                <div class="SignUp">
-                    <p class="condition">Don't have an account?</p>
-                    <button class="SignUpBtn">
 
-                        <a>Sign Up</a>
-                    </button>
-                </div>
+
+                <form action = "/user/signup/" method = "get">
+                    {% csrf_token %}
+                    <div class="SignUp" >
+                        <p class="condition">Don't have an account?</p>
+                        <button class="SignUpBtn" type = "submit" value="SIGNUP">
+                            <a>Sign Up</a>
+                        </button>
+
+                    </div>
+                </form>
             </div>
 
             <div class="pagebackground">

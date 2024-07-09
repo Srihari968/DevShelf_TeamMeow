@@ -31,3 +31,24 @@ def login(request):
 
     return render(request, template_name='login.html')
 
+def signup(request):
+    if(request.method == 'POST'):
+        if len(request.POST['username']) * len(request.POST['name']) * len(request.POST['email']) * len(request.POST['phone_number']) *len(request.POST['password']) == 0:
+            messages.info(request, "All fields are necessary")
+            return render(request,template_name='SignUp.html')
+        new_user = User()
+        new_user.username = request.POST['username']
+        new_user.name = request.POST['name']
+        new_user.email = request.POST['email']
+        new_user.phone = request.POST['phone_number']
+        if request.POST['password'] == request.POST['confirm_password']:
+            new_user.set_password(request.POST['password'])
+            new_user.save()
+            return render(request,template_name='login.html')
+        else:
+            messages.info(request,"Password and Confirm Password do not match")
+            return render(request,template_name="SignUp.html")
+    else:
+        return render(request,template_name='SignUp.html')
+
+

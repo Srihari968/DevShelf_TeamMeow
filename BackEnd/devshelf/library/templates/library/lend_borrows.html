@@ -23,6 +23,15 @@
                 <td>{{x.user.username}}</td>
                 <td>{{x.book.title}}</td>
                 <td>{{x.borrow_time}}</td>
+                <td>
+                    <form action = "/library/lend_book/" method="post">
+                        {% csrf_token %}
+                        <input id = "username1" type = "text" name = "username" value = "{{username}}" hidden>
+                        <button name = "lend_id" value = "{{x.id}}">
+                            <b>LEND</b>
+                        </button>
+                    </form>
+                </td>
             </tr>
 
         {% endfor %}

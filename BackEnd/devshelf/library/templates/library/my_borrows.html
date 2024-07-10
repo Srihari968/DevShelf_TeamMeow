@@ -5,17 +5,32 @@
     <title>Title</title>
 </head>
 <body>
+    <style>
+    table, th, td {
+  border: 1px solid black;
+}</style>
 
     <h1>Hello {{username}}</h1>
     <table>
         <tr>
         <th>Title</th>
         <th>Borrow time</th>
+        <th>Return Time</th>
+        <th> Status</th>
         </tr>
         {% for x in my_borrowals %}
             <tr>
                 <td>{{x.book}}</td>
                 <td>{{x.borrow_time}}</td>
+                <td>{{x.return_time}}</td>
+                {% if x.borrowed == True %}
+                    {% if x.is_lent == True %}
+                        <td>Lent</td>
+                    {% else %}
+                        <td>Requested</td>
+                    {% endif %}
+                {% endif %}
+
             </tr>
 
         {% endfor %}

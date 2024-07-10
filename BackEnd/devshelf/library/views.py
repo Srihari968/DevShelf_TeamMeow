@@ -9,6 +9,7 @@ from .forms import NameForm
 from .models import Book
 from .helper import borrow_book
 from user.models import Borrowed
+from datetime import datetime, timedelta
 
 
 # Create your views here.
@@ -76,9 +77,60 @@ def my_borrows(request):
     context = {'my_borrowals': my_borrowals, 'username': request.POST['username']}
     return render(request, 'library/my_borrows.html', context)
 
-def lend_books(request):
+def view_borrow_reqs(request):
     all_borrowals = Borrowed.objects.all()
-    context = {'username': request.POST['username'], 'borrowals': all_borrowals}
+    active_borrow_reqs = []
+    for x in all_borrowals:
+        if x.borrowed == True and x.is_lent == False:
+            active_borrow_reqs.append(x)
+    context = {'username': request.POST['username'], 'borrowals': active_borrow_reqs}
     return render(request,'library/lend_borrows.html', context)
+
+def lend_book(request):
+    print(request.POST['lend_id'])
+    all_borrowals = Borrowed.objects.all()
+    for x in all_borrowals:
+        if str(x.id) == str(request.POST['lend_id']):
+            print("found")
+            x.is_lent = True
+            x.borrowed_time = datetime.now()
+            x.return_time = datetime.now() + timedelta(days= 7)
+
+            books = Book.objects.all()
+            for b in books:
+                if b.title == x.book.title:
+                    # b.count = b.count - 1
+                    b.save()
+                    break
+            x.save()
+    context = {'username' : request.POST['username']}
+    return render(request,'library/HomePage.html', context)
+
+def receive_book(request):
+    all_borrowals = Borrowed.objects.all()
+    receivable_borrowals = []
+    if request.method == 'POST':
+        for x in all_borrowals:
+            if str(x.id) == str(request.POST['borrowal_id']):
+                x.is_lent = False
+                x.borrowed = False
+                books = Book.objects.all()
+                for book in books:
+                    if book.title == x.book.title:
+                        book.count = book.count+1
+                        book.save()
+                        break
+                x.save()
+                break
+        context = {'username': request.POST['username']}
+        return render(request,'HomePage.html', context)
+    for x in all_borrowals:
+        if x.is_lent == True:
+            receivable_borrowals.append(x)
+    context = {'lents': receivable_borrowals, 'username': request.POST['username']}
+    return render(request, 'library/receive_book.html', context)
+
+
+
 
 

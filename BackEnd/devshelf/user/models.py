@@ -17,6 +17,7 @@ class User(AbstractUser):
 
 
 class Borrowed(models.Model):
+
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user')
     book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='book')
     borrow_time = models.DateTimeField(auto_now_add=True)

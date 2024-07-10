@@ -39,8 +39,16 @@ def signup(request):
         new_user = User()
         new_user.username = request.POST['username']
         new_user.name = request.POST['name']
+        if not request.POST['email'].endswith('@iitdh.ac.in'):
+            messages.info(request, "Enter a valid Email")
+            return render(request, template_name="SignUp.html")
         new_user.email = request.POST['email']
-        new_user.phone = request.POST['phone_number']
+        if request.POST['phone_number'].isnumeric() and len(request.POST['phone_number']) == 10:
+            new_user.phone = request.POST['phone_number']
+        else:
+            messages.info(request, "Enter a valid Phone Number")
+            return render(request, template_name="SignUp.html")
+
         if request.POST['password'] == request.POST['confirm_password']:
             new_user.set_password(request.POST['password'])
             new_user.save()

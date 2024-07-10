@@ -25,7 +25,7 @@ def login(request):
     if(request.method == 'POST'):
         for x in users:
             if x.username == request.POST['username'] and x.check_password(request.POST['password']):
-                context = {'username': x.name}
+                context = {'username': x.username}
                 return render(request, 'library/HomePage.html', context)
         messages.info(request, 'Username/Password are incorrect. Please try again!')
 

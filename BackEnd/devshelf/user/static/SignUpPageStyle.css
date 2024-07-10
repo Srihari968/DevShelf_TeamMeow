@@ -137,7 +137,7 @@ body {
     padding: 20px 0px;
     position: relative;
     /* right: -200px; */
-    top: -240px;
+    top: -260px;
     left: 20px;
     
 
@@ -191,6 +191,7 @@ body {
     cursor: pointer;
     transition: .2s;
     position: relative;
+     /* top: -300px; */
     
 }
 
@@ -208,7 +209,7 @@ Button:hover {
 }
 
 .button{
-    top: -220px;
+    top: -248px;
     right: -30px;
 }
 
@@ -222,7 +223,7 @@ Button:hover {
 .LogInBtn {
     position: relative;
     /* left: 230px; */
-    top: -215px;
+    top: -245px;
     right: -450px;
     border: 2px solid white;
     border-radius: 7px;
@@ -255,10 +256,29 @@ Button:hover {
     position: relative;
     display: flex;
     /* left: 200px; */
-    top: -220px;
+    top: -280px;
     right: -400px;
     font-size: 1.1rem;
     padding-bottom: 5px;
     font-weight: 700;
 
 }
+
+
+.message {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    color: red;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    padding-top: 0px;
+    margin-top: 0px;
+    /* height: 4px; */
+    top:-434px;
+    z-index: 3;
+    right: -350px;
+    opacity: 1;
+}
+

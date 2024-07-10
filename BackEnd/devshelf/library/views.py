@@ -106,9 +106,32 @@ def lend_book(request):
     context = {'username' : request.POST['username']}
     return render(request,'library/HomePage.html', context)
 
-def receive_book(request):
+def view_lent_books(request):
     all_borrowals = Borrowed.objects.all()
     receivable_borrowals = []
+    # if request.method == 'POST':
+    #     for x in all_borrowals:
+    #         if str(x.id) == str(request.POST['borrowal_id']):
+    #             x.is_lent = False
+    #             x.borrowed = False
+    #             books = Book.objects.all()
+    #             for book in books:
+    #                 if book.title == x.book.title:
+    #                     book.count = book.count+1
+    #                     book.save()
+    #                     break
+    #             x.save()
+    #             break
+    #     context = {'username': request.POST['username']}
+    #     return render(request,'HomePage.html', context)
+    for x in all_borrowals:
+        if x.is_lent == True:
+            receivable_borrowals.append(x)
+    context = {'lents': receivable_borrowals, 'username': request.POST['username']}
+    return render(request, 'library/receive_book.html', context)
+
+def recieve_book(request):
+    all_borrowals = Borrowed.objects.all()
     if request.method == 'POST':
         for x in all_borrowals:
             if str(x.id) == str(request.POST['borrowal_id']):
@@ -123,12 +146,8 @@ def receive_book(request):
                 x.save()
                 break
         context = {'username': request.POST['username']}
-        return render(request,'HomePage.html', context)
-    for x in all_borrowals:
-        if x.is_lent == True:
-            receivable_borrowals.append(x)
-    context = {'lents': receivable_borrowals, 'username': request.POST['username']}
-    return render(request, 'library/receive_book.html', context)
+    return render(request,'library/HomePage.html', context)
+
 
 
 

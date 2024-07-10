@@ -63,7 +63,7 @@
                 <input type="submit" value="Lend Books">
             </form>
 
-            <form action = "/library/receive_book/" method = "get">
+            <form action = "/library/view_lent_books/" method = "post">
                 {% csrf_token %}
                 <input id = "username3" type = "text" name = "username" value = "{{username}}" hidden>
                 <input type="submit" value="Receive Books">

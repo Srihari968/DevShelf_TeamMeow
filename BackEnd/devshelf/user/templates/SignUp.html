@@ -66,12 +66,16 @@
                     </button>
                 </form>
 
-                <div class="LogIn">
-                   <p class="condition">Already have an Account?</p>
-                    <button class="LogInBtn">
-                       <a >Login</a>
-                    </button>
-                </div>
+                <form action="/user/login/" method="get">
+                    {% csrf_token %}
+                    <div class="LogIn">
+                        <p class="condition">Already have an Account?</p>
+                        <button class="LogInBtn">
+                            <a >Login</a>
+                        </button>
+                    </div>
+                </form>
+
             </div>
             <div class="message">
                     {%for message in messages%}

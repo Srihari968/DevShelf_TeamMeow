@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             let yes = document.querySelector("#btn2");
             yes.addEventListener("click", () => {
-//                alert("you borrowed "+ btn.id);
+                alert("you borrowed "+ btn.id);
                 console.log(document.getElementById("csrf").value);
                 let formData = new FormData()
                 formData.append("username",document.getElementById("username").value)
@@ -45,7 +45,9 @@ document.addEventListener('DOMContentLoaded', function() {
                          "X-CSRFToken": getCookie("csrftoken")
                     },
 
+
                     });
+                    location.reload();
                 function getCookie(name) {
                         const value = `; ${document.cookie}`;
                         const parts = value.split(`; ${name}=`);

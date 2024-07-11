@@ -57,7 +57,7 @@ def get_name(request):
         form = NameForm()
 
 
-    return render(request, 'library/search_books.html', context)
+    return render(request, 'library/search.html', context)
 
 def borrow_page(request):
     for x in request.POST:

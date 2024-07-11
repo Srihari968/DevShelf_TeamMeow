@@ -53,6 +53,7 @@
                 </button>
              
                 <input id = "username" type = "text" name = "username" value = "{{username}}" hidden>
+                 <input id = "csrf" type = "text" name = "csrf" value = "{{csrf_token}}" hidden>
             
             </div>
 
@@ -70,7 +71,7 @@
                                 <img class = "box-img" src="{% static 'new1.jpeg' %}" >
                                 <h6>Availability: {{book.count}}</h6>
                                 <!-- <p id="info">View Info</p> -->
-                                <button class="box-btn">Add to Cart</button>
+                                <button class="box-btn" id = "{{book.title}}">Add to Cart</button>
                             </div>
                             
                             

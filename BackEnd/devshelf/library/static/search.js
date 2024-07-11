@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     buttons.forEach((btn) => {
         btn.addEventListener("click", (event) => {
             event.stopPropagation();
+            console.log(btn.id)
             let dialog=document.querySelector(".dialog");
             dialog.style.display="block";
         
@@ -28,6 +29,31 @@ document.addEventListener('DOMContentLoaded', function() {
             let cancel = document.querySelector("#btn1");
             cancel.addEventListener("click", () => {
                 dialog.style.display="none";
+            })
+
+            let yes = document.querySelector("#btn2");
+            yes.addEventListener("click", () => {
+//                alert("you borrowed "+ btn.id);
+                console.log(document.getElementById("csrf").value);
+                let formData = new FormData()
+                formData.append("username",document.getElementById("username").value)
+                formData.append("borrow", btn.id)
+                fetch("/library/borrow/",{
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                         "X-CSRFToken": getCookie("csrftoken")
+                    },
+
+                    });
+                function getCookie(name) {
+                        const value = `; ${document.cookie}`;
+                        const parts = value.split(`; ${name}=`);
+                        if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+                dialog.style.display="none";
+
             })
 
 

@@ -12,7 +12,8 @@ def borrow_book(title: str, username:str):
 
     borrowed = Borrowed()
     for x in users:
-        if x.name == username:
+        if x.username == username:
+            print("username found")
             borrowed.user = x
     for x in books:
         if x.title == title:

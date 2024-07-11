@@ -12,6 +12,7 @@ from user.models import Borrowed
 from datetime import datetime, timedelta
 
 
+
 # Create your views here.
 
 
@@ -59,20 +60,23 @@ def get_name(request):
 
     return render(request, 'library/search.html', context)
 
+
+
 def borrow_page(request):
+    print("dsdsds")
+    print(request.POST)
     for x in request.POST:
         print(x)
         print(request.POST[x])
-    context = {'borrowed': request.POST['borrow'],'username': request.POST['username']}
-    borrow_book(request.POST['borrow'],request.POST['username'])
-
-    return render(request,'library/borrowpage.html',context)
+    context = {'borrowed': request.POST.get('borrow', ""), 'username': request.POST.get('username', "")}
+    borrow_book(request.POST.get('borrow', ""), request.POST.get('username', ""))
+    return render(request, 'library/borrowpage.html', context)
 def my_borrows(request):
     all_borrowals = Borrowed.objects.all()
     my_borrowals = []
 
     for x in all_borrowals:
-        if x.user.name == request.POST['username']:
+        if x.user.username == request.POST['username']:
             my_borrowals.append(x)
     context = {'my_borrowals': my_borrowals, 'username': request.POST['username']}
     return render(request, 'library/my_borrows.html', context)

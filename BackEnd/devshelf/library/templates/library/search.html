@@ -12,7 +12,7 @@
     <header id="header">
         <div class="top-bar">
             <a href="" class="logo-link">
-                <img src="" alt="logo-pic" class="logo">
+                <img src="{% static 'cropped_image.png' %}" alt="logo-pic" class="logo">
             </a>
             <div class="icon-tag">
                 <i class="fa-solid fa-house"></i>
@@ -66,21 +66,23 @@
                         <div class="box1">
                             
                             <div class="box-content">
-                                <h2>{{book.title}}</h2>
+                                <h3 class="box-title">{{book.title}}</h3>
                                 <img class = "box-img" src="{% static 'new1.jpeg' %}" >
-                                <h6>Availability: 25</h6>
+                                <h6>Availability: {{book.count}}</h6>
                                 <!-- <p id="info">View Info</p> -->
                                 <button class="box-btn">Add to Cart</button>
                             </div>
+                            
+                            
                             <div class="back">
                                 <h4>More details:</h4>
                             
-                                <p><b class="head">Author(s):</b>{{book.author}}</p>
-                                <p><b class="head">Description:</b>{{book.description}}</p>
-                                <p><b class="head">Genre:</b>{{book.genre}}</p>
-                                <p><b class="head">Department:</b> {{book.department}}</p>
-                                <p><b class="head">Vendor:</b> {{book.vendor}}</p>
-                                <p><b class="head">Publisher(s):</b>{{book.publisher}}</p>
+                                <p><b class="head">Author(s): </b>{{book.author}}</p>
+                                <p><b class="head">Description: </b>{{book.description}}</p>
+                                <p><b class="head">Genre: </b>{{book.genre}}</p>
+                                <p><b class="head">Department: </b> {{book.department}}</p>
+                                <p><b class="head">Vendor: </b> {{book.vendor}}</p>
+                                <p><b class="head">Publisher(s): </b>{{book.publisher}}</p>
                                 
                             </div>
                         </div>

@@ -173,30 +173,47 @@ main{
     transform: rotateY(180deg);
 }
 
-.box1:hover{
+.box-img:hover{
     cursor: pointer;
 }
 
-.box-content , .back{
+
+.box-content {
     
-    margin-left: 1.75em;
+    margin-left: 1em;
     padding-right: 10px;
     /* border: 2px solid black; */
     position:absolute;
     backface-visibility: hidden;
+
+    height:94%;
+    width:85%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
     
 
 }
 .back{
+    
+    position:absolute;
+    backface-visibility: hidden;
+
+    height:94%;
+    width:85%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+
+
     transform: rotateY(180deg);
     margin-right:10px;
-    margin-left: 2px;
+    margin-left: 20px;
     /* border: 2px solid black; */
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
     gap:30px;
     
 }
@@ -213,7 +230,7 @@ main{
     text-underline-offset: 2.5px;
 }
 .box-img{
-    height:280px;
+    height:275px;
     width:100%;
     background-position: center;
     background-size: contain;
@@ -228,10 +245,13 @@ main{
     font-size: 16px;
 }
 
-.box-content h2{
+.box-title{
+    
+    width: 100%;
     text-align: center;
+    
 }
-.box-content h2:hover{
+.box-title:hover{
     text-decoration: underline;
     cursor: pointer;
 }

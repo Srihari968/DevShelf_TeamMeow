@@ -73,14 +73,7 @@ def borrow_page(request):
     borrow_book(request.POST.get('borrow', ""), request.POST.get('username', ""))
     return render(request, 'library/borrowpage.html', context)
 def my_borrows(request):
-    send_mail(
-        "Subject here",
-        "Here is the message.",
-        "gonahalsrihari@gmail.com",
-        ["to@example.com"],
-        fail_silently=False,
-    )
-    print("mail sent")
+    
     all_borrowals = Borrowed.objects.all()
     my_borrowals = []
 
@@ -168,15 +161,6 @@ def recieve_book(request):
         context = {'username': request.POST['username']}
     return render(request,'library/HomePage.html', context)
 
-def send_daily_email():
-    send_mail(
-        "Subject here",
-        "Here is the message.",
-        "gonahalsrihari@gmail.com",
-        ["to@example.com"],
-        fail_silently=False,
-    )
-    print("mail sent")
 
 
 

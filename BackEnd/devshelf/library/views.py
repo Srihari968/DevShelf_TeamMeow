@@ -8,7 +8,7 @@ from django.template import loader
 from .forms import NameForm
 from .models import Book
 from .helper import borrow_book
-from user.models import Borrowed
+from user.models import Borrowed, User
 from datetime import datetime, timedelta
 
 
@@ -78,7 +78,14 @@ def my_borrows(request):
     for x in all_borrowals:
         if x.user.username == request.POST['username']:
             my_borrowals.append(x)
-    context = {'my_borrowals': my_borrowals, 'username': request.POST['username']}
+    users = User.objects.all()
+    userr = None
+    for x in users:
+        if x.username == request.POST['username']:
+            print("sssssssssssssss")
+            userr = x
+
+    context = {'my_borrowals': my_borrowals, 'username': request.POST['username'], 'user': userr}
     return render(request, 'library/my_borrows.html', context)
 
 def view_borrow_reqs(request):

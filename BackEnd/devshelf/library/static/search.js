@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     });
                     location.reload();
+                    location.reload();
                 function getCookie(name) {
                         const value = `; ${document.cookie}`;
                         const parts = value.split(`; ${name}=`);

@@ -29,6 +29,12 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'gonahalsrihari@gmail.com'
+EMAIL_HOST_PASSWORD = 'ngqq stgl hdzo lsya'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -45,6 +51,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'rest_framework.authtoken',
+
+    'django_crontab',
+]
+CRONJOBS = [
+    ('0 0 * * *', 'library.tasks.send_submit_mail'),
 ]
 
 MIDDLEWARE = [

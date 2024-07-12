@@ -15,12 +15,17 @@
     <tr>
         <th>Username</th>
         <th>Title</th>
+        <th>Borrow time</th>
+        <th>Due time</th>
         <th>Receive</th>
+
     </tr>
     {% for x in lents %}
     <tr>
         <td>{{x.user.username}}</td>
         <td>{{x.book.title}}</td>
+        <td>{{x.borrow_time}}</td>
+        <td>{{x.return_time}}</td>
         <td>
             <form action = "/library/receive_book/" method="post">
                 {% csrf_token %}

@@ -22,7 +22,7 @@ def HomePage(request):
     #template = loader.get_template('HomePage.html')
     for x in request.POST:
         print(x)
-    context = {'username': request.POST['username']}
+    context = {'username': request.POST.get('username')}
     return render(request,template_name='library/HomePage.html', context=context)
     #return HttpResponse(template.render())
     
@@ -140,7 +140,7 @@ def view_lent_books(request):
     for x in all_borrowals:
         if x.is_lent == True:
             receivable_borrowals.append(x)
-    context = {'lents': receivable_borrowals, 'username': request.POST['username']}
+    context = {'lents': receivable_borrowals, 'username': request.POST.get('username')}
     return render(request, 'library/receive_book.html', context)
 
 def recieve_book(request):
@@ -159,7 +159,7 @@ def recieve_book(request):
                 x.save()
                 break
         context = {'username': request.POST['username']}
-    return render(request,'library/HomePage.html', context)
+    return render(request,'library/receive_book.html', context)
 
 
 

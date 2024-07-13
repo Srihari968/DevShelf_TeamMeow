@@ -33,7 +33,15 @@
             </div>
             <div class="icon-tag">
                 <i class="fa-solid fa-book-open"></i>
-                <a>Books</a>
+                <form action = "/library/test/" method = "post">
+                    {% csrf_token %}
+                    <input type="text" name = "your_name" value = "" hidden>
+                    <input type = "text" name = "username" value = "{{username}}" hidden>
+                    <button type = submit>
+                        <a>Books</a>
+                    </button>
+                </form>
+
             </div>
             <div class="icon-tag">
                 <i class="fa-solid fa-phone"></i>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <link rel="stylesheet"  href="borrowstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+</head>
+<body>
+    <header id="header">
+        <div class="top-bar">
+            <a href="http://127.0.0.1:8000/user/login/#header" class="logo-link">
+                <img src="{% static 'cropped_image.png' %}" alt="logo-pic" class="logo">
+            </a>
+            <div class="icon-tag">
+                <i class="fa-solid fa-house"></i>
+                <a>Home</a>
+            </div>
+            <div class="icon-tag">
+                <i class="fa-solid fa-users"></i>
+                <a>About Us</a>
+            </div>
+            <div class="icon-tag">
+                <i class="fa-solid fa-book-open"></i>
+                <a>Books</a>
+            </div>
+            <div class="icon-tag">
+                <i class="fa-solid fa-phone"></i>
+                <a>Contact</a>
+            </div>
+            <div class="icon-tag">
+                <i class="fa-solid fa-clipboard-question"></i>
+                <a>FAQ</a>
+            </div>
+            <form action = "/library/my_borrows/" method = "post">
+                {% csrf_token %}
+            <div class="icon-tag account">
+                <i class="fa-solid fa-user"></i>
+                {% if username != "admin" %}
+
+
+                <input id = "username4" type = "text" name = "username" value = "{{username}}" hidden>
+                <button type="submit" value="View my borrowals">My Account</button>
+
+                {% endif %}
+            </div>
+           </form>
+        </div>
+    </header>
+
+    <!-- <main>
+        <div class="profile-sec">
+            <div class="profile-name">
+                <h2>My Profile</h2>
+            </div>
+            
+            <div class="profile-stats">
+                <div class="pr-name">
+                    <h3 class="pr-title">Name</h3>
+                    <p class="pr-value">Yashas Subramanya</p>
+                </div>
+                <div class="pr-name">
+                    <h3 class="pr-title">Userame</h3>
+                    <p class="pr-value">YashX777</p>
+                </div>
+                <div class="pr-name">
+                    <h3 class="pr-title">Email</h3>
+                    <p class="pr-value">yashas060205@gmail.com</p>
+                </div>
+                <div class="pr-name">
+                    <h3 class="pr-title">Phone No.</h3>
+                    <p class="pr-value">+91 9481568840</p>
+                </div>
+                <div class="pr-name">
+                    <h3 class="pr-title">Password</h3>
+                    <p class="pr-value">hello123</p>
+                </div>
+            </div>
+            
+        </div>
+        
+    </main> -->
+    <body>
+        <div class="container">
+            <nav class="sidebar">
+                <div class="sidebar-header">
+                    <h2>Akshara</h2>
+                </div>
+                <ul>
+                    <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> Borrowed Books</a></li>
+                    <li><a href="#"><i class="fas fa-search"></i> Search Books</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+            <div class="profile-container">
+                <h3 class="pr-head">My Profile</h3>
+                <div class="profile-header">
+                    
+                    <div class="profile-picture">
+                        
+                        <img src="pexels-olenkabohovyk-3646172.jpg" alt="Profile Picture">
+                        <button type="submit" class="pr-btn">Click here to Change Password</button>
+                    </div>
+                    <div class="profile-info">
+                        <div class="pr-name">
+                            <h3 class="pr-title">Name</h3>
+                            <i class="fa-solid fa-right-long arrow"></i>
+                            <p class="pr-value">Yashas Subramanya</p>
+                        </div>
+                        <div class="pr-name">
+                            <h3 class="pr-title">Userame</h3>
+                             <i class="fa-solid fa-right-long arrow"></i>
+                            <p class="pr-value">YashX777</p>
+                        </div>
+                        <div class="pr-name">
+                            <h3 class="pr-title">Email</h3>
+                             <i class="fa-solid fa-right-long arrow"></i>
+                            <p class="pr-value">Yashas060205@gmail.com</p>
+                        </div>
+                        <div class="pr-name">
+                            <h3 class="pr-title">Phone No.</h3>
+                             <i class="fa-solid fa-right-long arrow"></i>
+                            <p class="pr-value">+91 9481568840</p>
+                        </div>
+                        <div class="pr-name">
+                            <h3 class="pr-title">Member</h3>
+                             <i class="fa-solid fa-right-long arrow"></i>
+                            <p class="pr-value">Student</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-content">
+                    <h2>Borrowed Books</h2>
+                    <table class="borrowed-books">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Issue Date</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>The Great Gatsby</td>
+                                <td>F. Scott Fitzgerald</td>
+                                <td>July 20, 2024</td>
+                                <td>July 29, 2024</td>
+                                <td>Submitted</td>
+                            </tr>
+                            <tr>
+                                <td>To Kill a Mockingbird</td>
+                                <td>Harper Lee</td>
+                                <td>August 1, 2024</td>
+                                <td>July 29, 2024</td>
+                                <td>Submitted</td>
+                            </tr>
+                            <tr>
+                                <td>1984</td>
+                                <td>George Orwell</td>
+                                <td>August 15, 2024</td>
+                                <td>July 29, 2024</td>
+                                <td>Submitted</td>
+                            </tr>
+                            <tr>
+                                <td>1984</td>
+                                <td>George Orwell</td>
+                                <td>August 15, 2024</td>
+                                <td>July 29, 2024</td>
+                                <td>Submitted</td>
+                            </tr>
+                            <tr>
+                                <td>1984</td>
+                                <td>George Orwell</td>
+                                <td>August 15, 2024</td>
+                                <td>July 29, 2024</td>
+                                <td>Submitted</td>
+                            </tr>
+                            <tr>
+                                <td>1984</td>
+                                <td>George Orwell</td>
+                                <td>August 15, 2024</td>
+                                <td>July 29, 2024</td>
+                                <td>Submitted</td>
+                            </tr>
+                            <tr>
+                                <td>1984</td>
+                                <td>George Orwell</td>
+                                <td>August 15, 2024</td>
+                                <td>July 29, 2024</td>
+                                <td>Submitted</td>
+                            </tr>
+                            <tr>
+                                <td>1984</td>
+                                <td>George Orwell</td>
+                                <td>August 15, 2024</td>
+                                <td>July 29, 2024</td>
+                                <td>Submitted</td>
+                            </tr>
+                            <tr>
+                                <td>1984</td>
+                                <td>George Orwell</td>
+                                <td>August 15, 2024</td>
+                                <td>July 29, 2024</td>
+                                <td>Submitted</td>
+                            </tr>
+                            <tr>
+                                <td>1984</td>
+                                <td>George Orwell</td>
+                                <td>August 15, 2024</td>
+                                <td>July 29, 2024</td>
+                                <td>Submitted</td>
+                            </tr>
+                            <tr>
+                                <td>1984</td>
+                                <td>George Orwell</td>
+                                <td>August 15, 2024</td>
+                                <td>July 29, 2024</td>
+                                <td>Submitted</td>
+                            </tr>
+                            <tr>
+                                <td>1984</td>
+                                <td>George Orwell</td>
+                                <td>August 15, 2024</td>
+                                <td>July 29, 2024</td>
+                                <td>Submitted</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <footer>
+        <div class="foot-panel1">
+            <a href="#header">Back to Top</a>
+        </div>
+        <div class="foot-panel2">
+            <ul>
+            <p>Address: 123 Library St, Booktown, Dharwad-27</p>
+            <p>Phone: (+91) 1234567890</p>
+            <p>Email: contact@aksharalibrary.com</p>
+            </ul>
+            <ul class="shift">
+                <a href="/about">About Us</a>
+                <a href="/home">Home</a>
+                <a href="/books">Books</a>
+                <a href="/faq">FAQ</a>
+                <a href="/contact">Contact Us</a>
+            </ul>
+            <ul>
+                <p>Login</p>
+                <p>Sign Up</p>
+            </ul>
+        </div>
+        <div class="foot-panel4">
+            <div class="foot-second">
+                <a>© 2024, Akshara.com, Inc. or its affiliates.</a>
+                <br>
+                <a>All rights reserved.</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

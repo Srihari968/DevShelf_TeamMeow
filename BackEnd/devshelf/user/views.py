@@ -45,7 +45,7 @@ def signup(request):
         if request.POST['password'] == request.POST['confirm_password']:
             new_user.set_password(request.POST['password'])
             new_user.save()
-            return render(request,template_name='login.html')
+            return render(request,template_name='user/login.html')
         else:
             messages.info(request,"Password and Confirm Password do not match")
             return render(request,template_name="user/SignUp.html")

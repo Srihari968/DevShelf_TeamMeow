@@ -232,3 +232,38 @@
  	font-weight: 400;
 
  }
+ .RPBtn {
+	position: relative;
+	left: 15px;
+	top: 10px;
+	border: 2px solid white;
+	border-radius: 7px;
+	box-sizing: border-box;
+	margin-top: 3px;
+	padding: 3px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+	font-weight: 700;
+	/* width: 25%; */
+	color: #4C489D;
+	box-shadow: 2px 3px 3px #111e20;
+	cursor: pointer;
+	transition: .2s;
+
+}
+ .condition1 {
+	position: relative;
+	display: flex;
+	left: 27px;
+	top: 8px;
+	font-size: 0.75rem;
+	padding-bottom: 5px;
+	font-weight: 400;
+
+}
+
+.RPBtn:hover {
+	transform: scale(1.20);
+}

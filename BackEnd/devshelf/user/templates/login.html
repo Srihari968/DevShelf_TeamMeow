@@ -53,6 +53,17 @@
                     </div>
                 </form>
 
+                <form action="/user/reset_password/" method="get">
+                    {% csrf_token %}
+                    <div class="Reset Password">
+                        <p class="condition1">Forgot Password?</p>
+                        <button class="RPBtn" type="submit" value="SIGNUP">
+                            <a>Reset Password</a>
+                        </button>
+
+                    </div>
+                </form>
+
             </div>
 
             <div class="pagebackground">

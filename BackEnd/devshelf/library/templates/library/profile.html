@@ -18,7 +18,14 @@
             </a>
             <div class="icon-tag">
                 <i class="fa-solid fa-house"></i>
-                <a>Home</a>
+                <form action = "/library/home/" method = "post">
+                    {% csrf_token %}
+                    <input type="text" name = 'username' value = '{{username}}' hidden>
+                    <button type = 'submit'>
+                        <a>Home</a>
+                    </button>
+
+                </form>
             </div>
             <div class="icon-tag">
                 <i class="fa-solid fa-users"></i>
@@ -105,28 +112,31 @@
                     <div class="profile-picture">
                         
                         <img src="pexels-olenkabohovyk-3646172.jpg" alt="Profile Picture">
-                        <button type="submit" class="pr-btn">Click here to Change Password</button>
+                        <form action="/user/reset_password/">
+                            {% csrf_token %}
+                            <button type="submit" class="pr-btn">Click here to Reset Password</button>
+                        </form>
                     </div>
                     <div class="profile-info">
                         <div class="pr-name">
                             <h3 class="pr-title">Name</h3>
                             <i class="fa-solid fa-right-long arrow"></i>
-                            <p class="pr-value">Yashas Subramanya</p>
+                            <p class="pr-value">{{user.name}}</p>
                         </div>
                         <div class="pr-name">
                             <h3 class="pr-title">Userame</h3>
                              <i class="fa-solid fa-right-long arrow"></i>
-                            <p class="pr-value">YashX777</p>
+                            <p class="pr-value">{{user.username}}</p>
                         </div>
                         <div class="pr-name">
                             <h3 class="pr-title">Email</h3>
                              <i class="fa-solid fa-right-long arrow"></i>
-                            <p class="pr-value">Yashas060205@gmail.com</p>
+                            <p class="pr-value">{{user.email}}</p>
                         </div>
                         <div class="pr-name">
                             <h3 class="pr-title">Phone No.</h3>
                              <i class="fa-solid fa-right-long arrow"></i>
-                            <p class="pr-value">+91 9481568840</p>
+                            <p class="pr-value">+91-{{user.phone}}</p>
                         </div>
                         <div class="pr-name">
                             <h3 class="pr-title">Member</h3>

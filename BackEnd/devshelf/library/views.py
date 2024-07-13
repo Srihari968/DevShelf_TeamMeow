@@ -73,7 +73,7 @@ def borrow_page(request):
     borrow_book(request.POST.get('borrow', ""), request.POST.get('username', ""))
     return render(request, 'library/borrowpage.html', context)
 def my_borrows(request):
-    
+
     all_borrowals = Borrowed.objects.all()
     my_borrowals = []
 
@@ -88,7 +88,7 @@ def my_borrows(request):
             userr = x
 
     context = {'my_borrowals': my_borrowals, 'username': request.POST['username'], 'user': userr}
-    return render(request, 'library/my_borrows.html', context)
+    return render(request, 'library/profile.html', context)
 
 def view_borrow_reqs(request):
     all_borrowals = Borrowed.objects.all()

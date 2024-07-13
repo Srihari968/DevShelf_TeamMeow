@@ -22,8 +22,8 @@ def HomePage(request):
     #template = loader.get_template('HomePage.html')
     for x in request.POST:
         print(x)
-    context
-    return render(request,template_name='library/HomePage.html')
+    context = {'username': request.POST['username']}
+    return render(request,template_name='library/HomePage.html', context=context)
     #return HttpResponse(template.render())
     
     
@@ -117,7 +117,7 @@ def lend_book(request):
                     break
             x.save()
     context = {'username' : request.POST['username']}
-    return render(request,'library/HomePage.html', context)
+    return render(request,'library/lend_borrows.html', context)
 
 def view_lent_books(request):
     all_borrowals = Borrowed.objects.all()

@@ -2,105 +2,68 @@
 {% load static %}
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Lend Books</title>
-    <link rel="stylesheet"  href="{% static 'Lend_Borrows.css' %}">
+    <link rel="stylesheet" href="{% static 'Lend_Borrows.css' %}">
 </head>
 
 <body>
     <div class="container">
-       <span id="msg"> Hello {{username}}</span> 
+        <span id="msg"> Hello {{username}}</span>
 
         <div class="box">
             <div class="boxcontent">
-              
+
                 <section>
-                    
-                
-        
+
+
+
                     <h1 id="title">AKSHARA</h1>
                     <div class="tbl-header">
-                      <table cellpadding="0" cellspacing="0" border="0">
-                        <thead>
-                          <tr>
-                            <th>User</th>
-                            <th>Title</th>
-                            <th>Request time</th>
-                          </tr>
-                        </thead>
-                      </table>
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Title</th>
+                                    <th>Request time</th>
+                                </tr>
+                            </thead>
+                        </table>
                     </div>
                     <div class="tbl-content">
-                      <table cellpadding="0" cellspacing="0" border="0">
-                        <tbody>
-                            {% for x in borrowals %}
-                            <tr>
-                                <td>{{x.user.username}}</td>
-                                <td>{{x.book.title}}</td>
-                                <td class="BorrowTime" >{{x.borrow_time}}</td>
-                                <td class="LendBtn">
-                                    <form action = "/library/lend_book/" method="post">
-                                        {% csrf_token %}
-                                        <input id = "username1" type = "text" name = "username" value = "{{username}}" hidden>
-                                        <button name = "lend_id" value = "{{x.id}}">
-                                            <b>LEND</b>
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                
-                        {% endfor %}
-                          
-                        </tbody>
-                      </table>
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <tbody>
+                                {% for x in borrowals %}
+                                <tr>
+                                    <td>{{x.user.username}}</td>
+                                    <td>{{x.book.title}}</td>
+                                    <td class="BorrowTime">{{x.borrow_time}}</td>
+                                    <td class="LendBtn">
+                                        <form action="/library/lend_book/" method="post">
+                                            {% csrf_token %}
+                                            <input id="username1" type="text" name="username" value="{{username}}"
+                                                hidden>
+                                            <button name="lend_id" value="{{x.id}}">
+                                                <b>LEND</b>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+
+                                {% endfor %}
+
+                            </tbody>
+                        </table>
                     </div>
                 </section>
 
             </div>
         </div>
     </div>
-   
-    
-  
-      
-<!-- <div class="container">
 
-    <div class="box">
-        <div class="boxcontent">
-            <h2 id="title">AKSHARA</h2>
-            <table>
-                <tr>
-                    <th>User</th>
-                    <th>Title</th>
-                    <th>Request time</th>
-                </tr>
-                {% for x in borrowals %}
-                    <tr>
-                        <td>{{x.user.username}}</td>
-                        <td>{{x.book.title}}</td>
-                        <td>{{x.borrow_time}}</td>
-                        <td>
-                            <form action = "/library/lend_book/" method="post">
-                                {% csrf_token %}
-                                <input id = "username1" type = "text" name = "username" value = "{{username}}" hidden>
-                                <button name = "lend_id" value = "{{x.id}}">
-                                    <b>LEND</b>
-                                </button>
-                            </form>
-                        </td>
-                    </tr>
-        
-                {% endfor %}
-            </table>
-
-        </div>
-
-    </div>
-</div>
-    hello {{username}} -->
-  
-
-    <script src="{% static 'Lend_Borrows.js' %}" ></script>
+    <script src="{% static 'Lend_Borrows.js' %}"></script>
 </body>
+
 </html>

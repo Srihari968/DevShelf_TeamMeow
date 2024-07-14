@@ -25,22 +25,31 @@
     color:white;
     font-size: 17px;
     padding: 5px;
+    display: flex;
+    gap:0.5rem;
 }
 
 .icon-tag-select
 {
     color: white;
     background-color: #071952;
+    
     font-size: 17px;
-    border: none;
-    padding:5px;
+    border-radius: 0;
+    border: none !important;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.icon-tag-select:hover{
+    color: #37B7C3;
 }
 
 .icon-tag:hover{
     border: 2px solid #37B7C3;
     border-radius: 4px;
     color: #37B7C3;
-    cursor: pointer;
+    
 }
 
 .logo
@@ -264,6 +273,7 @@ main{
 }
 #info {
     font-size: 1.1rem;
+    font-weight: 700;
     color: white;
     margin-bottom: 1%;
 }
@@ -454,6 +464,9 @@ main{
         grid-template-columns: repeat(1,1fr);
         gap:50px;
     }
+
+    
+    
 }
 @media (min-width: 577px) {
     .result{
@@ -461,6 +474,8 @@ main{
         grid-template-columns: repeat(2,1fr);
         gap:50px;
     }
+
+    
 }
 /* Small laptop styles */
 @media (min-width: 768px) {
@@ -527,9 +542,20 @@ main{
 }
 }
 
-@media (max-width:675px)
+@media (max-width:775px)
 {
     .shift{
         margin-left: 10%;
     }
+
+    .top-bar{
+        height:300px;
+        background-color: #071952;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        color:white;
+    }
 }
+

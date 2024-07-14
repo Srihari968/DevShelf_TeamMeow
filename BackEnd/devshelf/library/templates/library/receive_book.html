@@ -36,7 +36,12 @@
                 </li>
                 <li>
 
-                    <button type="submit" class="Btn fas"  >  Logout</button>
+                   <form action="/user/login/" method="get">
+                    {% csrf_token %}
+                        <button class="Btn fas">
+                            <a >Logout</a>
+                        </button>
+                </form>
                 </li>
             </ul>
         </nav>

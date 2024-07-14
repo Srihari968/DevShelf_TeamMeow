@@ -27,12 +27,13 @@
                 <a class="icon-tag-select">About Us</a>
             </div>
             <div class="icon-tag">
-                <i class="fa-solid fa-book-open"></i>
+
                 <form action = "/library/test/" method = "post">
                     {% csrf_token %}
                     <input type="text" name = "your_name" value = "" hidden>
                     <input type = "text" name = "username" value = "{{username}}" hidden>
                     <button type = submit class="icon-tag-select">
+                        <i class="fa-solid fa-book-open"></i>
                         Books
                     </button>
                 </form>
@@ -93,7 +94,9 @@
             <div class="lib-pic">
                 <div class="lib-content slide-in-left" id="lib-logo">
                     <div class="lib-ct-top">
-                        <img src="{% static 'iitdhlogo1.png' %}"  class="edu"></img>
+
+                        <img id ="img" src="{% static 'iitdhlogo1.png' %}"  class="edu"></img>
+
                         <div>
                             <h3>Step into</h3>
                             <h1>Akshara</h1>

@@ -15,11 +15,12 @@
                 <img src="{% static 'cropped_image.png' %}" alt="logo-pic" class="logo">
             </a>
             <div class="icon-tag">
-                <i class="fa-solid fa-house"></i>
+
                 <form action = "/library/home/" method = "post">
                     {% csrf_token %}
                     <input type="text" name = 'username' value = '{{username}}' hidden>
                     <button type = 'submit'>
+                        <i class="fa-solid fa-house"></i>
                         <a>Home</a>
                     </button>
 

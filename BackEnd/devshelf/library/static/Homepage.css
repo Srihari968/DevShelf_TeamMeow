@@ -25,22 +25,31 @@
     color:white;
     font-size: 17px;
     padding: 5px;
+    display: flex;
+    gap:0.5rem;
 }
 
 .icon-tag-select
 {
     color: white;
     background-color: #071952;
+    
     font-size: 17px;
-    border: none;
-    padding:5px;
+    border-radius: 0;
+    border: none !important;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.icon-tag-select:hover{
+    color: #37B7C3;
 }
 
 .icon-tag:hover{
     border: 2px solid #37B7C3;
     border-radius: 4px;
     color: #37B7C3;
-    cursor: pointer;
+    
 }
 
 .logo
@@ -57,16 +66,19 @@
 
 .lib-pic
 {
+    
     height:75vh;
-    width:100%;
+    width:94%;
     background-image: url(library\ pic.jpg);
     background-size: cover;
     z-index: -1;
-    
+    padding: 3%;
 
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
+
+    
 
     
     
@@ -74,15 +86,15 @@
 }
 
 .lib-aks{
-    height:45%;
-    width: 20%;
+    min-height:40%;
+    width: 25%;
     border: 8px solid rgb(237, 188, 98);
     background-color:white ;
 
+    margin-left: -12%;
+    z-index: 10;
+    
 
-    position: absolute;
-
-    margin-left: 1100px;
 
     display: flex;
     justify-content: center;
@@ -224,6 +236,8 @@
     justify-content: space-evenly;
     align-items: center;
 
+   
+
 }
 
 .lib-ct-top h1{
@@ -251,7 +265,7 @@
 
 #lib-logo{
 
-    
+    overflow: auto;
     
     height:85%;
     width:63%;
@@ -413,8 +427,19 @@
     margin-top: 10px;
     margin-bottom: 35px;
 }
+
+.align{
+    overflow: auto;
+
+}
+.box-content h2::-webkit-scrollbar{
+    background: transparent;
+}
 .box-content h2{
+    height:60px;
+    
     text-align: center;
+    overflow: auto;
 }
 .box-content h2:hover{
     text-decoration: underline;
@@ -484,7 +509,7 @@
     justify-content: space-around;
     align-items: top;
     padding-top: 40px;
-    margin-left: -60px;
+    
 }
 
 .foot-panel2 ul a{

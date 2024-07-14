@@ -20,11 +20,11 @@
             </a>
             <div class="icon-tag">
                 <i class="fa-solid fa-house"></i>
-                <a>Home</a>
+                <a class="icon-tag-select">Home</a>
             </div>
             <div class="icon-tag">
                 <i class="fa-solid fa-users"></i>
-                <a>About Us</a>
+                <a class="icon-tag-select">About Us</a>
             </div>
             <div class="icon-tag">
                 <i class="fa-solid fa-book-open"></i>
@@ -32,19 +32,19 @@
                     {% csrf_token %}
                     <input type="text" name = "your_name" value = "" hidden>
                     <input type = "text" name = "username" value = "{{username}}" hidden>
-                    <button type = submit>
-                        <a>Books</a>
+                    <button type = submit class="icon-tag-select">
+                        Books
                     </button>
                 </form>
 
             </div>
             <div class="icon-tag">
                 <i class="fa-solid fa-phone"></i>
-                <a>Contact</a>
+                <a class="icon-tag-select">Contact</a>
             </div>
             <div class="icon-tag">
                 <i class="fa-solid fa-clipboard-question"></i>
-                <a>FAQ</a>
+                <a class="icon-tag-select">FAQ</a>
             </div>
             <form action = "/library/my_borrows/" method = "post">
                 {% csrf_token %}
@@ -54,7 +54,7 @@
 
 
                 <input id = "username4" type = "text" name = "username" value = "{{username}}" hidden>
-                <button type="submit" value="View my borrowals">My Account</button>
+                <button type="submit" value="View my borrowals" class="icon-tag-select">My Account</button>
 
                 {% endif %}
             </div>
@@ -140,31 +140,31 @@
             <div class="bs 1">
                 <div class="box1">
                     <div class="box-content">
-                        <h2>Fiction & Non-Fiction</h2>
+                        <h2 class="align">Fiction & Non-Fiction</h2>
                         <img class = "box-img" src="{% static 'fiction.jpg' %}" >
-                        <p>See more</p>
+                        
                     </div>
                 </div>
                 <div class="box1">
                     <div class="box-content">
-                        <h2>Science & Technology</h2>
+                        <h2>Science & Technology Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt totam exercitationem a, vitae velit expedita ab, corporis earum necessitatibus quo sapiente, odit error dolorem cumque dolor sed ea voluptates nemo?</h2>
                         <img class = "box-img" src="{% static 'science.jpg' %}" >
 
-                        <p>See more</p>
+                        
                     </div>
                 </div>
                 <div class="box1">
                     <div class="box-content">
                         <h2>History</h2>
                         <img class = "box-img" src="{% static 'history.jpg' %}" >
-                        <p>See more</p>
+                        
                     </div>
                 </div>
                 <div class="box1">
                     <div class="box-content">
                         <h2>Others</h2>
                         <img class = "box-img" src="{% static 'spanish.jpg' %}" >
-                        <p>See more</p>
+                        
                     </div>
                 </div>
             </div>
@@ -174,28 +174,28 @@
                     <div class="box-content">
                         <h2>Fortune's Shadow</h2>
                         <img class = "box-img" src="{% static 'new1.jpeg' %}" >
-                        <p>See more</p>
+                        
                     </div>
                 </div>
                 <div class="box2">
                     <div class="box-content">
                         <h2>Wisteria</h2>
                         <img class = "box-img" src="{% static 'new2.jpg' %}" >
-                        <p>See more</p>
+                        
                     </div>
                 </div>
                 <div class="box2">
                     <div class="box-content">
                         <h2>The Witcher</h2>
                         <img class = "box-img" src="{% static 'new3.jpg' %}" >
-                        <p>See more</p>
+                        
                     </div>
                 </div>
                 <div class="box2">
                     <div class="box-content">
                         <h2>Soul</h2>
                         <img class = "box-img" src="{% static 'new4.jpg' %}" >
-                        <p>See more</p>
+                        
                     </div>
                 </div>
             </div>
@@ -205,28 +205,28 @@
                     <div class="box-content">
                         <h2>Immortals of Meluha</h2>
                         <img class = "box-img" src="{% static 'best1.jpg' %}" >
-                        <p>See more</p>
+                        
                     </div>
                 </div>
                 <div class="box3">
                     <div class="box-content">
                         <h2>Atomic Habits</h2>
                         <img class = "box-img" src="{% static 'best2.jpg' %}" >
-                        <p>See more</p>
+                        
                     </div>
                 </div>
                 <div class="box3">
                     <div class="box-content">
                         <h2>Cengage Mathematics</h2>
                         <img class = "box-img" src="{% static 'best3.jpeg' %}" >
-                        <p>See more</p>
+                        
                     </div>
                 </div>
                 <div class="box3">
                     <div class="box-content">
                         <h2>Indian History</h2>
                         <img class = "box-img" src="{% static 'best4.jpg' %}" >
-                        <p>See more</p>
+                        
                     </div>
                 </div>
             </div>

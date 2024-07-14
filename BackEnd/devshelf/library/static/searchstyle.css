@@ -60,6 +60,7 @@ main{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    min-height:100vh;
 }
 /* SEARCH SECTION */
 .search-bar{
@@ -247,20 +248,27 @@ main{
 
 .box-title{
     
+    height:15%;
     width: 100%;
     text-align: center;
+    overflow: auto;
     
+}
+
+.box-title::-webkit-scrollbar{
+    background: transparent;
 }
 .box-title:hover{
     text-decoration: underline;
     cursor: pointer;
 }
-.box-content p {
-    text-align: right;
-    color: #4b0005;
+#info {
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 1%;
 }
-.box-content p:hover{
-    text-decoration: underline;
+#info:hover{
+    
     cursor: pointer;
 }
 
@@ -268,7 +276,7 @@ main{
     height: 35px;
     width: 85px;
     margin-top: 5px;
-    margin-left: 80px;
+    margin-left: 35%;
     border: 2px solid black;
     border-radius: 15px;
     font-size: 14px;
@@ -437,3 +445,91 @@ main{
     margin-top: -30px;
 }
 
+/* Base styles for mobile (default) */
+
+/* Tablet styles */
+@media (max-width: 576px) {
+    .result{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap:50px;
+    }
+}
+@media (min-width: 577px) {
+    .result{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:50px;
+    }
+}
+/* Small laptop styles */
+@media (min-width: 768px) {
+    .result{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:50px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 962px) {
+    .result{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap:50px;
+    }
+}
+
+/* Large desktop styles */
+@media (min-width: 1200px) {
+    .result{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap:50px;
+    }
+}
+
+@media (max-width: 1200px)
+{
+    .foot-panel2{
+        height: 250px;
+        background-color: #304E67;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding-left: 5%;
+    }
+
+    .foot-panel2 ul a{
+    display: inline;
+    
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    
+}
+
+.foot-panel2 ul p{
+    font-size: 15px ;
+    
+}
+
+.lsp{
+    margin-right: 5%;
+}
+
+.ape{
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+}
+
+@media (max-width:675px)
+{
+    .shift{
+        margin-left: 10%;
+    }
+}

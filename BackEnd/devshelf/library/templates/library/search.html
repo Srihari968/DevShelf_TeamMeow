@@ -86,7 +86,7 @@
                             
                             <div class="box-content">
                                 <h3 class="box-title">{{book.title}}</h3>
-                                <img class = "box-img" src="{% static 'new1.jpeg' %}" >
+                                <img class = "box-img" src="/static/{{ book.title }}.jpeg" onerror="this.src='/static/new1.jpeg'; this.onerror=null;">
                                 <h6>Availability: {{book.count}}</h6>
                                 
                                 <button class="box-btn" id = "{{book.title}}">Add to Cart</button>

@@ -32,13 +32,13 @@
                 <a>About Us</a>
             </div>
             <div class="icon-tag">
-                <i class="fa-solid fa-book-open"></i>
                 <form action = "/library/test/" method = "post">
                     {% csrf_token %}
                     <input type="text" name = "your_name" value = "" hidden>
                     <input type = "text" name = "username" value = "{{username}}" hidden>
-                    <button type = submit>
-                        <a>Books</a>
+                    <button type = submit class="icon-tag-select">
+                        <i class="fa-solid fa-book-open"></i>
+                        Books
                     </button>
                 </form>
 
@@ -59,7 +59,7 @@
 
 
                 <input id = "username4" type = "text" name = "username" value = "{{username}}" hidden>
-                <button type="submit" value="View my borrowals">My Account</button>
+                <button type="submit" value="View my borrowals" class="icon-tag-select">My Account</button>
 
                 {% endif %}
             </div>

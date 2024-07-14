@@ -287,6 +287,10 @@
    animation-delay: 0s;
 }
 
+#lib-logo::-webkit-scrollbar{
+    background: transparent;
+}
+
 #lib-logo h1{
     text-align: center;
     font-family: "Sacramento", cursive;

@@ -9,6 +9,7 @@
 
 body {
     background: linear-gradient(90deg, #89a7e9, #2c33ce);
+    
 }
 
 .container {
@@ -19,6 +20,7 @@ body {
     /* margin:30px; */
     /* margin-top: 80px; */
     padding: 30px;
+
 
 }
 
@@ -281,4 +283,14 @@ Button:hover {
     z-index: 3;
     right: -350px;
     opacity: 1;
+}
+
+.login__icon{
+    color: #2c33ce;
+    margin-left: auto;
+}
+
+.button__icon {
+    color: #2c33ce;
+    margin-left: auto;
 }

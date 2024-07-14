@@ -267,3 +267,15 @@
 .RPBtn:hover {
 	transform: scale(1.20);
 }
+
+
+.fas{
+	color:  #0844c7;
+	margin-left: auto;
+	
+}
+
+.button__icon{
+        margin-left: auto;
+		color: #0844c7;
+}

@@ -7,12 +7,15 @@
     <meta charset="UTF-8">
     <title>Lend Books</title>
     <link rel="stylesheet" href="{% static 'Lend_Borrows.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <!-- <script src=" -->
 </head>
 
 <body>
 
     <div class="Menu">
-        ≡
+       <span class="fas fa-bars"></span>
       </div>
     <div class="container">
         <!-- <span id="msg"> Hello {{username}}</span> -->
@@ -26,17 +29,17 @@
                     <form action="/library/home/" method="post">
                         {% csrf_token %}
                         <input type = "text" name = "username" value = "{{username}}" hidden>
-                        <button type="submit" class="fas fa-user" >HomePage</button>
+                        <button type="submit" class="fas fa-user Btn" >  HomePage</button>
                     </form>
                 </li>
                 <li>
                     <form action="/library/view_lent_books/">
-                        <button  type="submit" class="fas fa-search">Receive Books</button>
-                    </form>
+                        <button  type="submit" class="fas fa-search Btn">  Receive Books</button>
+                    </form>  
                 </li>
                 <li>
 
-                    <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    <button type="submit" class="Btn fas"  >  Logout</button>
                 </li>
             </ul>
         </nav>

@@ -102,6 +102,7 @@ def view_borrow_reqs(request):
 def lend_book(request):
     print(request.POST['lend_id'])
     all_borrowals = Borrowed.objects.all()
+    receivable_borrowals = []
     for x in all_borrowals:
         if str(x.id) == str(request.POST['lend_id']):
             print("found")
@@ -116,8 +117,13 @@ def lend_book(request):
                     b.save()
                     break
             x.save()
-    context = {'username' : request.POST['username']}
-    return render(request,'library/lend_borrows.html', context)
+
+    active_borrow_reqs = []
+    for x in all_borrowals:
+        if x.borrowed == True and x.is_lent == False:
+            active_borrow_reqs.append(x)
+    context = {'username': request.POST['username'], 'borrowals': active_borrow_reqs}
+    return render(request, 'library/lend_borrows.html', context)
 
 def view_lent_books(request):
     all_borrowals = Borrowed.objects.all()
@@ -158,7 +164,11 @@ def recieve_book(request):
                         break
                 x.save()
                 break
-        context = {'username': request.POST['username']}
+        receivable_borrowals = []
+        for x in all_borrowals:
+            if x.is_lent == True:
+                receivable_borrowals.append(x)
+        context = {'lents': receivable_borrowals, 'username': request.POST.get('username')}
     return render(request,'library/receive_book.html', context)
 
 

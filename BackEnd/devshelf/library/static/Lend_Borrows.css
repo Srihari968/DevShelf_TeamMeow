@@ -174,9 +174,39 @@ h1{
   position: absolute;
   top: 5px;
   left: 10px;
-  font-size: 30px;
+  /* font-size: 50px; */
+  cursor: pointer;
+  height: 35x;
+  width: 35px;
+  text-align: center;
+  background-color: black;
+  border-radius: 3px;
+  transition: left 0.4s ease;
+
     
  }
+
+ .Menu.click{
+   left: 220px;
+ }
+
+ .Menu span{
+  color: white;
+  font-size: 28px;
+  line-height: 35px;
+  /* font-weight: bold; */
+ }
+
+ .Menu.click span:before{
+  content: "✖";
+ }
+
+ .sidebar.show{
+  left: 0px;
+ }
+
+ 
+
 
  .Menu:active,
  .Menu:focus,
@@ -189,13 +219,26 @@ h1{
 
  }
 
+ 
+
  .sidebar {
-  width: 250px;
+  /* width: 250px;
   background-color: #0073e6;
   color: #ffffff;
   display: flex;
   flex-direction: column;
+  padding-top: 20px; */
+  position: fixed;
+  
+  height: 100%;
+  background-color: #0073e6;
+  z-index: 5;
   padding-top: 20px;
+  width: 200px;
+  left: -200px;
+  transition: left 0.4s ease;
+
+
 }
 
 .sidebar-header {
@@ -203,10 +246,34 @@ h1{
   text-align: center;
   font-size: 1.5em;
   border-bottom: 1px solid #ffffff;
+  font-family: "Bona Nova SC",serif;
+  text-shadow: 1px 1px white;
+
+  
+  color: black;
+
 }
 
+.Btn{
+  background-color:  #0073e6;
+  color: white;
+  font-weight: 300;
+  border: none;
+  
+}
+.Btn:active,
+.Btn:focus,
+.Btn:hover {
+  
+  outline: none;
+ cursor: pointer;
+   transform: scale(1.17);
+   color: purple;
+
+}
 .sidebar ul {
   list-style: none;
+  /* padding-top: 20px; */
   padding: 0;
   margin: 0;
   flex-grow: 1;
@@ -230,7 +297,17 @@ h1{
 
 .sidebar ul li a:hover {
   text-decoration: underline;
+  transform: scale(1.17);
+  color: purple
 }
+
+/* .Log{
+  position: relative;
+  left: -100px;
+
+} */
+
+
 
   
   section{

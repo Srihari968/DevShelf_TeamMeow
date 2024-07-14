@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="{% static 'SignUpPageStyle.css' %}" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 </head>
 
 <body>
@@ -25,44 +26,52 @@
                     <div class="SUField">
             
                         <p class="Display">Enter your Username:</p>
+                        <i class="login__icon fas fa-user"></i>
                         <input type="text" class="SUInfo" placeholder="Username" name = "username">
                     </div>
                     <div class="SUField">
             
                         <p class="Display">Enter your Name:</p>
+                        <i class="login__icon fa fa-user-circle"></i>
                         <input type="text" class="SUInfo" placeholder="Name" name = "name">
                     </div>
                     <div class="SUField">
             
                         <p class="Display">Enter your Email:</p>
+                        <i class="login__icon fas fa-envelope" aria-hidden="true"></i>
                         <input type="text" class="SUInfo" placeholder="Email" name = "email">
                     </div>
                     <div class="SUField2">
             
                         <p class="Display">Enter your Phone Number:</p>
+                        <i class="login__icon fas fa-phone" aria-hidden="true"></i>
                         <input type="text" class="SUInfo" placeholder="Phone Number" name = "phone_number">
                     </div>
                     <div class="SUField2">
             
                         <p class="Display">Enter your Password:</p>
+                        <i class="login__icon fas fa-lock" aria-hidden="true"></i>
                         <input type="password" class="SUInfo" placeholder="Password" name = "password">
                     </div>
                     <div class="SUField2">
             
                         <p class="Display">Confirm the Password</p>
+                        <i class="login__icon fas fa-lock" aria-hidden="true"></i>
                         <input type="password" class="SUInfo" placeholder="Confirm Password" name = "confirm_password">
                     </div>
                    
                     <div class="SUField3">
             
                         <span class="Display">Admin:</span>
+                        <i class="login__icon fa fa-user-circle-o" aria-hidden="true"></i>
                         <input type="checkbox" class="SUInfo" placeholder="Admin">
                     </div>
                    
 
                     <button class="button SUSubmit">
                         <span class="ButtonText">SignUp</span>
-                        <i class="ButtonIcon_Symbol"></i>
+                        <!-- <i class="ButtonIcon_Symbol"></i> -->
+                        <i class="button__icon fas fa-chevron-right"></i>
                     </button>
                 </form>
 

@@ -25,9 +25,9 @@
 
                 </form>
             </div>
-            <div class="icon-tag">
+            <div class="icon-tag" >
                 <i class="fa-solid fa-users"></i>
-                <a class="icon-tag-select">About Us</a>
+                <a class="icon-tag-select" href = "/library/about_us">About Us</a>
             </div>
             <div class="icon-tag">
 
@@ -94,7 +94,7 @@
                             
                             <div class="box-content">
                                 <h3 class="box-title">{{book.title}}</h3>
-                                <img class = "box-img" src="/static/{{ book.title }}.jpeg" onerror="this.src='/static/new1.jpeg'; this.onerror=null;">
+                                <img class = "box-img" src="../../static/{{ book.title }}.jpeg" onerror="this.src='/static/new1.jpeg'; this.onerror=null;">
                                 <h6>Availability: {{book.count}}</h6>
                                 
                                 <button class="box-btn" id = "{{book.title}}">Add to Cart</button>

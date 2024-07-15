@@ -171,6 +171,9 @@ def recieve_book(request):
         context = {'lents': receivable_borrowals, 'username': request.POST.get('username')}
     return render(request,'library/receive_book.html', context)
 
+def about_us(request):
+    return render(request, template_name='library/about.html')
+
 
 
 

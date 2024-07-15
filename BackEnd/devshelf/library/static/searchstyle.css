@@ -426,7 +426,7 @@ main{
     margin-left: -60px;
 }
 
-.foot-panel2 ul a{
+.shift a{
     display: inline;
     margin-right: 50px;
     color: white;
@@ -434,9 +434,19 @@ main{
     text-decoration: none;
 }
 
-.foot-panel2 ul p{
+.ape ,.lsp{
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
     font-size: 15px ;
     margin-top: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.lsp a{
+    color: white;
+    text-decoration: none;
 }
 
 
@@ -518,7 +528,7 @@ main{
         padding-left: 5%;
     }
 
-    .foot-panel2 ul a{
+    .shift a{
     display: inline;
     
     color: white;
@@ -533,10 +543,16 @@ main{
 }
 
 .lsp{
+    display: flex;
+    flex-direction: column;
+    gap:7px;
     margin-right: 5%;
 }
 
 .ape{
+    display: flex;
+    flex-direction: column;
+    gap:3px;
     margin-left: 5%;
     margin-bottom: 2%;
 }

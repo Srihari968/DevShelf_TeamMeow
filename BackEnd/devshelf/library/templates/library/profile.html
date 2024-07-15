@@ -13,7 +13,7 @@
 <body>
     <header id="header">
         <div class="top-bar">
-            <a href="http://127.0.0.1:8000/user/login/#header" class="logo-link">
+            <a  class="logo-link">
                 <img src="{% static 'cropped_image.png' %}" alt="logo-pic" class="logo">
             </a>
             <div class="icon-tag">
@@ -27,11 +27,21 @@
 
                 </form>
             </div>
-            <div class="icon-tag">
-                <i class="fa-solid fa-users" ></i>
-                <a class="icon-tag-select" href = "/library/about_us">About Us</a>
+           <div class="icon-tag">
+
+                <form action = "/library/about_us" method = "post">
+                    {% csrf_token %}
+
+                    <input type = "text" name = "username" value = "{{username}}" hidden>
+                    <button type = submit class="icon-tag-select">
+                        <i class="fa-solid fa-users"></i>
+                        About Us
+                    </button>
+                </form>
+
             </div>
             <div class="icon-tag">
+
                 <form action = "/library/test/" method = "post">
                     {% csrf_token %}
                     <input type="text" name = "your_name" value = "" hidden>
@@ -45,7 +55,7 @@
             </div>
             <div class="icon-tag">
                 <i class="fa-solid fa-phone"></i>
-                <a>Contact</a>
+                <a href="#footer" class="icon-tag-select">Contact</a>
             </div>
             <form action = "/library/my_borrows/" method = "post">
                 {% csrf_token %}
@@ -102,21 +112,19 @@
                     <h2>Akshara</h2>
                 </div>
                 <ul>
-                    <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
-                    <li><a href="#"><i class="fas fa-book"></i> Borrowed Books</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i> Search Books</a></li>
-                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li><a href="#my-profile"><i class="fas fa-user"></i> My Profile</a></li>
+                    <li><a href="#borrow-books"><i class="fas fa-book"></i> Borrowed Books</a></li>
                     <li><a href="../../user/login"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                     </li>
                 </ul>
             </nav>
             <div class="profile-container">
-                <h3 class="pr-head">My Profile</h3>
+                <h3 class="pr-head" id="my-profile">My Profile</h3>
                 <div class="profile-header">
                     
                     <div class="profile-picture">
                         
-                        <img src="pexels-olenkabohovyk-3646172.jpg" alt="Profile Picture">
+                        <img src="{% static 'user.png' %}" alt="Profile Picture">
                         <form action="/user/reset_password/">
                             {% csrf_token %}
                             <button type="submit" class="pr-btn">Click here to Reset Password</button>
@@ -151,7 +159,7 @@
                     </div>
                 </div>
                 <div class="profile-content">
-                    <h2>Borrowed Books</h2>
+                    <h2 id="borrow-books">Borrowed Books</h2>
                     <table class="borrowed-books">
                         <thead>
                             <tr>
@@ -187,19 +195,19 @@
         </div>
     </body>
 
-    <footer>
+    <footer id="footer">
         <div class="foot-panel1">
             <a href="#header">Back to Top</a>
         </div>
-        <div class="foot-panel2">
-            <ul>
-            <p>Address: 123 Library St, Booktown, Dharwad-27</p>
+        <div class="foot-panel2" id="contact-us">
+            <ul class="ape">
+            <p>Address: KRDC, IIT Dharwad, Dharwad-27</p>
             <p>Phone: (+91) 1234567890</p>
-            <p>Email: contact@aksharalibrary.com</p>
+            <p>Email: aksharaiitdh@gmail.com</p>
             </ul>
             <ul class="shift">
                 <a href="">
-                    <form action = "/library/about_us/" method = "post">
+                    <form action = "/library/about_us" method = "post">
                     {% csrf_token %}
 
                     <input type = "text" name = "username" value = "{{username}}" hidden>
@@ -232,7 +240,7 @@
 
                 <a href="#contact-us">Contact Us</a>
             </ul>
-            <ul>
+            <ul class="lsp">
                 <a href="/../user/login">Login</a>
                 <a href="/../user/signup">Sign Up</a>
             </ul>

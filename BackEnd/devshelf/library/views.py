@@ -42,7 +42,7 @@ def get_name(request):
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form = NameForm(request.POST)
-        search = request.POST['your_name']
+        search = request.POST.get('your_name')
         for x in request.POST:
             print(x)
         print('Entered ', search)

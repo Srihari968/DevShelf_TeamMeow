@@ -259,15 +259,43 @@
             <p>Email: contact@aksharalibrary.com</p>
             </ul>
             <ul class="shift">
-                <a href="/about">About Us</a>
-                <a href="/library/home/">Home</a>
-                <a href="/library/test">Books</a>
-                <a href="/faq">FAQ</a>
+                <a href="">
+                    <form action = "/library/about_us/" method = "post">
+                    {% csrf_token %}
+
+                    <input type = "text" name = "username" value = "{{username}}" hidden>
+                    <button type = submit">
+                        About Us
+                    </button>
+                </form>
+                </a>
+                <a href="/library/home/">
+                    <form action = "/library/home/" method = "post">
+                    {% csrf_token %}
+
+                    <input type = "text" name = "username" value = "{{username}}" hidden>
+                    <button type = submit">
+                       Home
+                    </button>
+                    </form>
+                </a>
+                <a href="/library/test">
+                    <form action = "/library/test/" method = "post">
+                        {% csrf_token %}
+
+                        <input type = "text" name = "username" value = "{{username}}" hidden>
+                        <input type = "text" name = "your_name" value = "" hidden>
+                        <button type = submit">
+                        Books
+                        </button>
+                    </form>
+                </a>
+
                 <a href="#contact-us">Contact Us</a>
             </ul>
             <ul class="lsp">
-                <a href="/user/login">Login</a>
-                <a href="/user/signup">Sign Up</a>
+                <a href="/../user/login">Login</a>
+                <a href="/../user/signup">Sign Up</a>
             </ul>
         </div>
         <div class="foot-panel4">

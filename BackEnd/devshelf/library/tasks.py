@@ -15,7 +15,7 @@ def send_submit_mail():
             if day > diff > timedelta(seconds=0):
                 send_mail("Return book to Akshara Library",
                           "Dear " + x.user.name + "\nPlease return " + x.book.title + " to the library.\nThe Due date for returning is : " + date + "\nA fine will be imposed if the book is not returned soon.",
-                          "gonahalsrihari@gmail.com",
+                          "aksharaiitdh@gmail.com",
                           [x.user.email],
                           fail_silently=False
                           )

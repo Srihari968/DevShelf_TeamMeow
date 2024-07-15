@@ -36,6 +36,10 @@ def get_name(request):
     # if this is a POST request we need to process the form data
     global context
     books = Book.objects.all()
+    userTher = 1
+
+    if request.POST.get('username') == "None":
+        userTher = 0
 
 
     #print(books)
@@ -52,7 +56,7 @@ def get_name(request):
             if search.lower() in book.title.lower() or search.lower() in book.author.lower() or search.lower() in book.genre.lower() or search.lower() in book.department.lower():
                 new.append(book)
 
-        context = {'search': search, 'books': new, 'username': request.POST['username']}
+        context = {'search': search, 'books': new, 'username': request.POST['username'], 'userTher': userTher}
         
     # if a GET (or any other method) we'll create a blank form
     else:
@@ -150,6 +154,7 @@ def view_lent_books(request):
     return render(request, 'library/receive_book.html', context)
 
 def recieve_book(request):
+    global receivable_borrowals
     all_borrowals = Borrowed.objects.all()
     if request.method == 'POST':
         for x in all_borrowals:
@@ -168,7 +173,7 @@ def recieve_book(request):
         for x in all_borrowals:
             if x.is_lent == True:
                 receivable_borrowals.append(x)
-        context = {'lents': receivable_borrowals, 'username': request.POST.get('username')}
+    context = {'lents': receivable_borrowals, 'username': request.POST.get('username')}
     return render(request,'library/receive_book.html', context)
 
 def about_us(request):

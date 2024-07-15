@@ -91,7 +91,7 @@
 
         <div class="all-results">
             <div class="result-section">
-                <p id="info">Note : Click on the card to view more details</p>
+                <p id="info">Note : Click on the card to view more details </p>
 
                 {% if books %}
 
@@ -104,11 +104,13 @@
                                 <h3 class="box-title">{{book.title}}</h3>
                                 <img class = "box-img" src="../../static/{{ book.title }}.jpeg" onerror="this.src='/static/new1.jpeg'; this.onerror=null;">
                                 <h6>Availability: {{book.count}}</h6>
-                                {% if book.count > 0 %}
+
+                                {% if book.count > 0 and userTher > 0 %}
                                     <button class="box-btn" id = "{{book.title}}" >Add to Cart</button>
                                 {% else %}
                                     <button class="box-btn"  disabled >Add to Cart</button>
                                 {% endif %}
+
                             </div>
                             
                             

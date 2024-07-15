@@ -2,3 +2,6 @@
 DevShelf_TeamMeow
 visit https://gonahalsrihari.pythonanywhere.com/user/login/ to test the website
 
+Best used on Desktop, preferably on Chrome or Microsoft Edge.
+
+

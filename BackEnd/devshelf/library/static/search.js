@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             let yes = document.querySelector("#btn2");
             yes.addEventListener("click", () => {
-                alert("You have borrowed the following book - "+ btn.id);
+                alert("You have requested for the following book - "+ btn.id);
                 console.log(document.getElementById("csrf").value);
                 let formData = new FormData()
                 formData.append("username",document.getElementById("username").value)

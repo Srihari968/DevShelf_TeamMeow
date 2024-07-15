@@ -309,7 +309,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: top;
-    padding-top: 40px;
+    padding-top: 30px;
     margin-left: -60px;
 }
 .shift{
@@ -365,7 +365,7 @@ body {
     margin-right:35px ;
     margin-top: -30px;
 }
-/* BODY */
+
 @media (max-width: 1200px)
 {
     .foot-panel2{
@@ -405,35 +405,32 @@ body {
     display: flex;
     flex-direction: column;
     gap:3px;
-    margin-left: 5%;
+    margin-left: 10%;
     margin-bottom: 2%;
 }
 
-.profile-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: #0073e6;
-    color: #ffffff;
-    justify-content: space-evenly;
-}
-
-.profile-picture{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap:40px;
-
-    margin-bottom: 10%;
+.shift {
+    margin-right:-2%;
+    flex-wrap: wrap;
+    gap:10px;
+    
 }
 }
 
 @media (max-width:775px)
 {
+    .ape{
+        display: flex;
+        flex-direction: column;
+        gap:3px;
+        margin-left: 15%;
+        margin-bottom: 2%;
+    }
+    
     .shift{
-        margin-left: 10%;
+        margin-right:-10%;
+        flex-wrap: wrap;
+        gap:10px;
     }
 
     .top-bar{
@@ -446,10 +443,47 @@ body {
         color:white;
     }
 
+    
+    
+    
+}
+/* BODY */
+@media (max-width: 1200px)
+{
+    
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    background-color: #0073e6;
+    color: #ffffff;
+    justify-content: start;
+}
+
+.profile-picture{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+
+    
+}
+}
+
+@media (max-width:775px)
+{
+    
+
     .profile-picture,.profile-info{
         transform: scale(0.8);
     }
 
+    .sidebar{
+        display: none;
+    }
     
 }
 
@@ -458,26 +492,9 @@ body {
     .profile-picture,.profile-info{
         transform: scale(0.6);
     }
+
+    .profile-info{
+        width:120vw;
+    }
 }
 
-@media (max-width:930px){
-    .line{
-        display: none;
-    }
-
-    .lib-aks{
-        display: none;
-    }
-
-    #lib-logo{
-        height: 70vh;
-        width: 70vw;
-    }
-
-    .edu{
-        display: none;
-    }
-    .lib-ct-top{
-        width: 75vw;
-    }
-}

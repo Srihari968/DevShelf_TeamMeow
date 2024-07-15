@@ -48,7 +48,7 @@
                 <a>Contact</a>
             </div>
             <form action = "/library/my_borrows/" method = "post">
-                {% csrf_token %}/
+                {% csrf_token %}
             <div class="icon-tag account">
                 <i class="fa-solid fa-user"></i>
                 {% if username != "admin" %}
@@ -176,7 +176,7 @@
                                             <td>Requested</td>
                                         {% endif %}
                                     {% else %}
-                                         <td>Submitted</td>
+                                         <td>Returned</td>
                                     {% endif %}
                                 </tr>
                             {% endfor %}

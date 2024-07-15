@@ -147,14 +147,24 @@
             <div class="bs 1">
                 <div class="box1">
                     <div class="box-content">
-                        <h2 class="align">Computer Science</h2>
+                        <form action="/library/test/" method="post">
+                            {% csrf_token %}
+                            <input type="text" name = "your_name" value = "computer science" hidden>
+                            <input type = "text" name = "username" value = "{{username}}" hidden>
+                            <button type = "submit" class="align">Computer Science</button>
+                        </form>
                         <img class = "box-img" src="{% static 'cs-book.png' %}" >
                         
                     </div>
                 </div>
                 <div class="box1">
                     <div class="box-content">
-                        <h2>Electrical Engineering</h2>
+                        <form action="/library/test/" method="post">
+                            {% csrf_token %}
+                            <input type="text" name = "your_name" value = "electrical engineering" hidden>
+                            <input type = "text" name = "username" value = "{{username}}" hidden>
+                            <button type = "submit" class="align">Electrical Engineering</button>
+                        </form>
                         <img class = "box-img" src="{% static 'ee-book.jpg' %}" >
 
                         
@@ -162,14 +172,24 @@
                 </div>
                 <div class="box1">
                     <div class="box-content">
-                        <h2>Mechanical Engineering</h2>
+                        <form action="/library/test/" method="post">
+                            {% csrf_token %}
+                            <input type="text" name = "your_name" value = "electrical engineering" hidden>
+                            <input type = "text" name = "username" value = "{{username}}" hidden>
+                            <button type = "submit" class="align">Mechanical Engineering</button>
+                        </form>
                         <img class = "box-img" src="{% static 'me-book.jpg' %}" >
                         
                     </div>
                 </div>
                 <div class="box1">
                     <div class="box-content">
-                        <h2>Civil Engineering</h2>
+                        <form action="/library/test/" method="post">
+                            {% csrf_token %}
+                            <input type="text" name = "your_name" value = "civil engineering" hidden>
+                            <input type = "text" name = "username" value = "{{username}}" hidden>
+                            <button type = "submit" class="align">Civil Engineering</button>
+                        </form>
                         <img class = "box-img" src="{% static 'civil-book.jpeg' %}" >
                         
                     </div>
@@ -179,28 +199,48 @@
             <div class="bs 2">
                 <div class="box2">
                     <div class="box-content">
-                        <h2>Algorithms</h2>
+                        <form action="/library/test/" method="post">
+                            {% csrf_token %}
+                            <input type="text" name = "your_name" value = "algorithms" hidden>
+                            <input type = "text" name = "username" value = "{{username}}" hidden>
+                            <button type = "submit" class="align">Algorithms</button>
+                        </form>
                         <img class = "box-img" src="{% static 'algo-book.jpg' %}" >
                         
                     </div>
                 </div>
                 <div class="box2">
                     <div class="box-content">
-                        <h2>Material Science</h2>
+                        <form action="/library/test/" method="post">
+                            {% csrf_token %}
+                            <input type="text" name = "your_name" value = "materials science" hidden>
+                            <input type = "text" name = "username" value = "{{username}}" hidden>
+                            <button type = "submit" class="align">Material Science</button>
+                        </form>
                         <img class = "box-img" src="{% static 'ms-book.jpg' %}" >
                         
                     </div>
                 </div>
                 <div class="box2">
                     <div class="box-content">
-                        <h2>Geotechnical Engineering</h2>
+                        <form action="/library/test/" method="post">
+                            {% csrf_token %}
+                            <input type="text" name = "your_name" value = "geotechnical" hidden>
+                            <input type = "text" name = "username" value = "{{username}}" hidden>
+                            <button type = "submit" class="align">Geotechnical Engineering</button>
+                        </form>
                         <img class = "box-img" src="{% static 'geo-book.jpg' %}" >
                         
                     </div>
                 </div>
                 <div class="box2">
                     <div class="box-content">
-                        <h2>Software Engineering</h2>
+                        <form action="/library/test/" method="post">
+                            {% csrf_token %}
+                            <input type="text" name = "your_name" value = "software engineering" hidden>
+                            <input type = "text" name = "username" value = "{{username}}" hidden>
+                            <button type = "submit" class="align">Software Engineering</button>
+                        </form>
                         <img class = "box-img" src="{% static 'se-book.jpg' %}" >
                         
                     </div>
@@ -210,28 +250,48 @@
             <div class="bs 3">
                 <div class="box3">
                     <div class="box-content">
-                        <h2>Introduction to Algorithms</h2>
+                        <form action="/library/test/" method="post">
+                            {% csrf_token %}
+                            <input type="text" name = "your_name" value = "introduction to algorithms" hidden>
+                            <input type = "text" name = "username" value = "{{username}}" hidden>
+                            <button type = "submit" class="align">Introduction to Algorithms</button>
+                        </form>
                         <img class = "box-img" src="{% static 'best1.jpg' %}" >
                         
                     </div>
                 </div>
                 <div class="box3">
                     <div class="box-content">
-                        <h2>Mechanical Vibrations</h2>
+                        <form action="/library/test/" method="post">
+                            {% csrf_token %}
+                            <input type="text" name = "your_name" value = "mechanical vibrations" hidden>
+                            <input type = "text" name = "username" value = "{{username}}" hidden>
+                            <button type = "submit" class="align">Mechanical Vibrations</button>
+                        </form>
                         <img class = "box-img" src="{% static 'best2.jpg' %}" >
                         
                     </div>
                 </div>
                 <div class="box3">
                     <div class="box-content">
-                        <h2>Python Crash Course</h2>
+                        <form action="/library/test/" method="post">
+                            {% csrf_token %}
+                            <input type="text" name = "your_name" value = "python crash course" hidden>
+                            <input type = "text" name = "username" value = "{{username}}" hidden>
+                            <button type = "submit" class="align">Python Crash Course</button>
+                        </form>
                         <img class = "box-img" src="{% static 'best3.jpeg' %}" >
                         
                     </div>
                 </div>
                 <div class="box3">
                     <div class="box-content">
-                        <h2>Steel Design</h2>
+                        <form action="/library/test/" method="post">
+                            {% csrf_token %}
+                            <input type="text" name = "your_name" value = "steel design" hidden>
+                            <input type = "text" name = "username" value = "{{username}}" hidden>
+                            <button type = "submit" class="align">Steel Design</button>
+                        </form>
                         <img class = "box-img" src="{% static 'best4.jpg' %}" >
                         
                     </div>

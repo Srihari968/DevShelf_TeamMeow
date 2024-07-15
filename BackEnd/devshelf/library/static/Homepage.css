@@ -33,7 +33,7 @@
 {
     color: white;
     background-color: #071952;
-    
+    text-decoration: none;
     font-size: 17px;
     border-radius: 0;
     border: none !important;
@@ -67,12 +67,12 @@
 .lib-pic
 {
     
-    height:75vh;
-    width:94%;
+    height:68vh;
+    width:96%;
     background-image: url(library\ pic.jpg);
     background-size: cover;
     z-index: -1;
-    padding: 3%;
+    padding: 2%;
 
     display: flex;
     justify-content: center;
@@ -267,7 +267,7 @@
 
     overflow: auto;
     
-    height:85%;
+    height:88%;
     width:63%;
 
     padding:5px;
@@ -517,13 +517,27 @@
     padding-top: 40px;
     margin-left: -60px;
 }
-
-.shift a{
-    display: inline;
+.shift{
+    display: flex;
+    justify-content: center;
+    align-items: start;
     margin-right: 50px;
+    gap:50px;
+}
+.shift button{
+    
+    
     color: white;
     font-size: 15px;
     text-decoration: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.shift a{
+    text-decoration: none;
+    color: white;
 }
 
 .ape ,.lsp{

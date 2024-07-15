@@ -57,7 +57,7 @@
             </div>
             <div class="icon-tag">
                 <i class="fa-solid fa-phone"></i>
-                <a class="icon-tag-select">Contact</a>
+                <a href="#footer" class="icon-tag-select">Contact</a>
             </div>
             <form action = "/library/my_borrows/" method = "post">
                 {% csrf_token %}
@@ -75,17 +75,9 @@
         </div>
     </header>
 
-    <h1>Hello {{username}}!</h1>
-        {% if username == "admin" %}
-            <b>You r admin</b>
-        {% endif %}
-        {% if username != "admin" %}
-            <form action = "/library/my_borrows/" method = "post">
-                {% csrf_token %}
-                <input id = "username1" type = "text" name = "username" value = "{{username}}" hidden>
-                <input type="submit" value="View my borrowals">
-            </form>
-        {% endif %}
+    
+        
+        
         {% if username == "admin" %}
             <form action = "/library/view_borrow_reqs/" method = "post">
                 {% csrf_token %}
@@ -151,95 +143,95 @@
 <!--            </form>-->
 
         <div class="book-section">
-            <h1 class="bs-name">Featured Categories</h1>
+            <h1 class="bs-name">Featured Departments</h1>
             <div class="bs 1">
                 <div class="box1">
                     <div class="box-content">
-                        <h2 class="align">Fiction & Non-Fiction</h2>
-                        <img class = "box-img" src="{% static 'fiction.jpg' %}" >
+                        <h2 class="align">Computer Science</h2>
+                        <img class = "box-img" src="{% static 'cs-book.png' %}" >
                         
                     </div>
                 </div>
                 <div class="box1">
                     <div class="box-content">
-                        <h2>Science & Technology Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt totam exercitationem a, vitae velit expedita ab, corporis earum necessitatibus quo sapiente, odit error dolorem cumque dolor sed ea voluptates nemo?</h2>
-                        <img class = "box-img" src="{% static 'science.jpg' %}" >
+                        <h2>Electrical Engineering</h2>
+                        <img class = "box-img" src="{% static 'ee-book.jpg' %}" >
 
                         
                     </div>
                 </div>
                 <div class="box1">
                     <div class="box-content">
-                        <h2>History</h2>
-                        <img class = "box-img" src="{% static 'history.jpg' %}" >
+                        <h2>Mechanical Engineering</h2>
+                        <img class = "box-img" src="{% static 'me-book.jpg' %}" >
                         
                     </div>
                 </div>
                 <div class="box1">
                     <div class="box-content">
-                        <h2>Others</h2>
-                        <img class = "box-img" src="{% static 'spanish.jpg' %}" >
+                        <h2>Civil Engineering</h2>
+                        <img class = "box-img" src="{% static 'civil-book.jpeg' %}" >
                         
                     </div>
                 </div>
             </div>
-            <h1 class="bs-name">New Arrivals</h1>
+            <h1 class="bs-name">Genre Gallery</h1>
             <div class="bs 2">
                 <div class="box2">
                     <div class="box-content">
-                        <h2>Fortune's Shadow</h2>
-                        <img class = "box-img" src="{% static 'new1.jpeg' %}" >
+                        <h2>Algorithms</h2>
+                        <img class = "box-img" src="{% static 'algo-book.jpg' %}" >
                         
                     </div>
                 </div>
                 <div class="box2">
                     <div class="box-content">
-                        <h2>Wisteria</h2>
-                        <img class = "box-img" src="{% static 'new2.jpg' %}" >
+                        <h2>Material Science</h2>
+                        <img class = "box-img" src="{% static 'ms-book.jpg' %}" >
                         
                     </div>
                 </div>
                 <div class="box2">
                     <div class="box-content">
-                        <h2>The Witcher</h2>
-                        <img class = "box-img" src="{% static 'new3.jpg' %}" >
+                        <h2>Geotechnical Engineering</h2>
+                        <img class = "box-img" src="{% static 'geo-book.jpg' %}" >
                         
                     </div>
                 </div>
                 <div class="box2">
                     <div class="box-content">
-                        <h2>Soul</h2>
-                        <img class = "box-img" src="{% static 'new4.jpg' %}" >
+                        <h2>Software Engineering</h2>
+                        <img class = "box-img" src="{% static 'se-book.jpg' %}" >
                         
                     </div>
                 </div>
             </div>
-            <h1 class="bs-name">Best-Sellers</h1>
+            <h1 class="bs-name">Popular Books</h1>
             <div class="bs 3">
                 <div class="box3">
                     <div class="box-content">
-                        <h2>Immortals of Meluha</h2>
+                        <h2>Introduction to Algorithms</h2>
                         <img class = "box-img" src="{% static 'best1.jpg' %}" >
                         
                     </div>
                 </div>
                 <div class="box3">
                     <div class="box-content">
-                        <h2>Atomic Habits</h2>
+                        <h2>Mechanical Vibrations</h2>
                         <img class = "box-img" src="{% static 'best2.jpg' %}" >
                         
                     </div>
                 </div>
                 <div class="box3">
                     <div class="box-content">
-                        <h2>Cengage Mathematics</h2>
+                        <h2>Python Crash Course</h2>
                         <img class = "box-img" src="{% static 'best3.jpeg' %}" >
                         
                     </div>
                 </div>
                 <div class="box3">
                     <div class="box-content">
-                        <h2>Indian History</h2>
+                        <h2>Steel Design</h2>
                         <img class = "box-img" src="{% static 'best4.jpg' %}" >
                         
                     </div>
@@ -248,15 +240,15 @@
         </div>    
     </div>  
 
-    <footer>
+    <footer id="footer">
         <div class="foot-panel1">
             <a href="#header">Back to Top</a>
         </div>
         <div class="foot-panel2" id="contact-us">
             <ul class="ape">
-            <p>Address: 123 Library St, Booktown, Dharwad-27</p>
+            <p>Address: KRDC, IIT Dharwad, Dharwad-27</p>
             <p>Phone: (+91) 1234567890</p>
-            <p>Email: contact@aksharalibrary.com</p>
+            <p>Email: aksharaiitdh@gmail.com</p>
             </ul>
             <ul class="shift">
                 <a href="">

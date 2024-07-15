@@ -86,7 +86,10 @@
 
         <div class="all-results">
             <div class="result-section">
-                <p id="info">Note: Click on the card to view more details</p>
+                <p id="info">Note : Click on the card to view more details</p>
+
+                {% if books %}
+
                 <div class="result">
                     {% for book in books %}
                     <div class="box-container">
@@ -116,6 +119,10 @@
                     </div>
                     {% endfor %}
                 </div>
+
+                {% else %}
+                    <p id="info">Oops, no books match your search!</p>
+                {% endif %}
             </div>
         </div>
         <div class="dialog">

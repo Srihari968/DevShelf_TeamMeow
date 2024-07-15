@@ -25,9 +25,18 @@
 
                 </form>
             </div>
-            <div class="icon-tag" >
-                <i class="fa-solid fa-users"></i>
-                <a class="icon-tag-select" href = "/library/about_us">About Us</a>
+           <div class="icon-tag">
+
+                <form action = "/library/about_us" method = "post">
+                    {% csrf_token %}
+
+                    <input type = "text" name = "username" value = "{{username}}" hidden>
+                    <button type = submit class="icon-tag-select">
+                        <i class="fa-solid fa-users"></i>
+                        About Us
+                    </button>
+                </form>
+
             </div>
             <div class="icon-tag">
 
@@ -44,11 +53,7 @@
             </div>
             <div class="icon-tag">
                 <i class="fa-solid fa-phone"></i>
-                <a class="icon-tag-select">Contact</a>
-            </div>
-            <div class="icon-tag">
-                <i class="fa-solid fa-clipboard-question"></i>
-                <a class="icon-tag-select">FAQ</a>
+                <a href="#footer" class="icon-tag-select">Contact</a>
             </div>
             <form action = "/library/my_borrows/" method = "post">
                 {% csrf_token %}
@@ -151,19 +156,19 @@
         
     </main>
 
-    <footer>
+    <footer id="footer">
         <div class="foot-panel1">
             <a href="#header">Back to Top</a>
         </div>
         <div class="foot-panel2" id="contact-us">
             <ul class="ape">
-            <p>Address: 123 Library St, Booktown, Dharwad-27</p>
+            <p>Address: KRDC, IIT Dharwad, Dharwad-27</p>
             <p>Phone: (+91) 1234567890</p>
-            <p>Email: contact@aksharalibrary.com</p>
+            <p>Email: aksharaiitdh@gmail.com</p>
             </ul>
             <ul class="shift">
                 <a href="">
-                    <form action = "/library/about_us/" method = "post">
+                    <form action = "/library/about_us" method = "post">
                     {% csrf_token %}
 
                     <input type = "text" name = "username" value = "{{username}}" hidden>

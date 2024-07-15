@@ -21,8 +21,8 @@
                 <form action = "/library/home/" method = "post">
                     {% csrf_token %}
                     <input type="text" name = 'username' value = '{{username}}' hidden>
-                    <button type = 'submit'>
-                        <a>Home</a>
+                    <button type = 'submit' class="icon-tag-select">
+                        Home
                     </button>
 
                 </form>
@@ -47,12 +47,8 @@
                 <i class="fa-solid fa-phone"></i>
                 <a>Contact</a>
             </div>
-            <div class="icon-tag">
-                <i class="fa-solid fa-clipboard-question"></i>
-                <a>FAQ</a>
-            </div>
             <form action = "/library/my_borrows/" method = "post">
-                {% csrf_token %}
+                {% csrf_token %}/
             <div class="icon-tag account">
                 <i class="fa-solid fa-user"></i>
                 {% if username != "admin" %}

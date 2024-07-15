@@ -172,7 +172,8 @@ def recieve_book(request):
     return render(request,'library/receive_book.html', context)
 
 def about_us(request):
-    return render(request, template_name='library/about.html')
+    context = {'username' : request.POST.get('username')}
+    return render(request, template_name='library/about.html', context=context)
 
 
 
